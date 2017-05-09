@@ -28,14 +28,14 @@ namespace IKriv {
 				SysFreeString(fileName);
 
 				DWORD cbData = 0;
-				hr = pFile->get_checksum(0, &cbData, NULL);
-				if (SUCCEEDED(hr))
+				EnsureSuccess(L"IDiaSourceFile.get_checksum 1st call", pFile->get_checksum(0, &cbData, NULL));
+				if (cbData == 0)
 				{
 					_checksum = gcnew array<byte>(0);
 				}
 				else
 				{
-					if (hr != E_OUTOFMEMORY) EnsureSuccess(L"IDiaSourceFile.get_checksum 1st call", hr);
+					EnsureSuccess(L"IDiaSourceFile.get_checksum 2nd call", hr);
 					_checksum = gcnew array<byte>(cbData);
 
 					std::vector<BYTE> data(cbData);
