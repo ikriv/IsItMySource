@@ -40,7 +40,7 @@ namespace IKriv.IsItMySource
 
         private bool VerifyFile(ISourceFileInfo fileInfo, string relativePath, Options options)
         {
-            var localRoot = options.RootPath ?? options.LocalRootPath;
+            var localRoot = options.LocalRootPath ?? options.RootPath;
             var localPath = String.IsNullOrEmpty(localRoot)
                 ? relativePath
                 : Path.Combine(localRoot, relativePath);
