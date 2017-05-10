@@ -1,0 +1,1 @@
+1 C:\ivan\dev\github\IsItMySource\TestProjects\Vs2015Test\ClrClassLibrary\Class1.cs None 

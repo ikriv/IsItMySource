@@ -1,4 +1,7 @@
 @echo off
+setlocal enabledelayedexpansion
+
+if NOT "%1" == "" goto :OneFile
 
 for %%f IN (^
 	Vs2015Test\ClrClassLibrary\bin\Debug\ClrClassLibrary.pdb^
@@ -7,4 +10,16 @@ for %%f IN (^
         Vs2015Test\ClrConsoleApp\bin\Release\ClrConsoleApp.pdb^
         Vs2015Test\Win32ConsoleApp\Debug\Win32ConsoleApp.pdb^
         Vs2015Test\Win32ConsoleApp\Release\Win32ConsoleApp.pdb)^
-DO call go1 %%f
+DO call go_diasdk %%f
+goto :End
+
+:OneFile
+set EXE=..\src\UsingDiaSdk\IsItMySource\bin\Debug\IsItMySource.exe
+set INFILE=%1
+set OUTFILE=dia_%INFILE:\=_%.txt
+echo %INFILE%
+%EXE% %INFILE% >%OUTFILE%
+
+:End
+
+
