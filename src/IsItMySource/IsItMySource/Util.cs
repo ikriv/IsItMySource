@@ -7,6 +7,7 @@ namespace IKriv.IsItMySource
     {
         public static string ToHex(byte[] ba)
         {
+            if (ba == null) return "(null)";
             return BitConverter.ToString(ba).Replace("-", "");
         }
 
