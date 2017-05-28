@@ -9,8 +9,6 @@ namespace IKriv {
 		namespace DiaSdk {
 			DiaSdkSourceFileInfo::DiaSdkSourceFileInfo(IDiaSourceFile* pFile)
 			{
-				HRESULT hr;
-
 				DWORD id;
 				EnsureSuccess(L"IDiaSourceFile.get_uniqueId()",
 					pFile->get_uniqueId(&id));
@@ -36,11 +34,10 @@ namespace IKriv {
 				}
 				else
 				{
-					EnsureSuccess(L"IDiaSourceFile.get_checksum 2nd call", hr);
 					_checksum = gcnew array<byte>(cbData);
 
 					std::vector<BYTE> data(cbData);
-					EnsureSuccess(L"IDiaSourceFile.get_checksum",
+					EnsureSuccess(L"IDiaSourceFile.get_checksum 2nd call",
 						pFile->get_checksum(cbData, &cbData, &data[0]));
 
 					Marshal::Copy(IntPtr((void*)&data[0]), _checksum, 0, cbData);
