@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using IKriv.IsItMySource.DiaSdk;
 using IKriv.IsItMySource.DiaSymReader;
 using IKriv.IsItMySource.Interfaces;
 
@@ -54,6 +55,10 @@ namespace IKriv.IsItMySource
             {
                 case "diasymreader":
                     return new DsrDebugInfoReader();
+
+                case "diasdk":
+                    return new DiaSdkDebugInfoReader();
+
 
                 default:
                     throw new NotSupportedException("Unknown debug info retrieval method: " + method);

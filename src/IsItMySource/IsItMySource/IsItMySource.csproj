@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -54,6 +54,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IsItMySource.DiaSdk\IsItMySource.DiaSdk.vcxproj">
+      <Project>{56f80ad4-e5b1-441c-b402-b6a57a8b2d33}</Project>
+      <Name>IsItMySource.DiaSdk</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IsItMySource.DiaSymReader\IsItMySource.DiaSymReader.csproj">
       <Project>{d1dc7a29-4b92-4b44-be1b-092530994b81}</Project>
       <Name>IsItMySource.DiaSymReader</Name>
