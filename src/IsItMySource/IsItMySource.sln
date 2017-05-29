@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource.Interfaces", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource.DiaSymReader", "IsItMySource.DiaSymReader\IsItMySource.DiaSymReader.csproj", "{D1DC7A29-4B92-4B44-BE1B-092530994B81}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IsItMySource.DiaSdk", "IsItMySource.DiaSdk\IsItMySource.DiaSdk.vcxproj", "{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource.DiaSdk.Managed", "IsItMySource.DiaSdk.Managed\IsItMySource.DiaSdk.Managed.csproj", "{39672094-CC09-464D-910F-038572BAF2F7}"
 EndProject
 Global
@@ -59,18 +57,6 @@ Global
 		{D1DC7A29-4B92-4B44-BE1B-092530994B81}.Release|x64.Build.0 = Release|Any CPU
 		{D1DC7A29-4B92-4B44-BE1B-092530994B81}.Release|x86.ActiveCfg = Release|Any CPU
 		{D1DC7A29-4B92-4B44-BE1B-092530994B81}.Release|x86.Build.0 = Release|Any CPU
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Debug|Any CPU.Build.0 = Debug|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Debug|x64.ActiveCfg = Debug|x64
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Debug|x64.Build.0 = Debug|x64
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Debug|x86.ActiveCfg = Debug|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Debug|x86.Build.0 = Debug|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Release|Any CPU.ActiveCfg = Release|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Release|Any CPU.Build.0 = Release|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Release|x64.ActiveCfg = Release|x64
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Release|x64.Build.0 = Release|x64
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Release|x86.ActiveCfg = Release|Win32
-		{56F80AD4-E5B1-441C-B402-B6A57A8B2D33}.Release|x86.Build.0 = Release|Win32
 		{39672094-CC09-464D-910F-038572BAF2F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39672094-CC09-464D-910F-038572BAF2F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39672094-CC09-464D-910F-038572BAF2F7}.Debug|x64.ActiveCfg = Debug|Any CPU
