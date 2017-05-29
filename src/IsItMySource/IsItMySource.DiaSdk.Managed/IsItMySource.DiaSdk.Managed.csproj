@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B20549F-DC1F-4B04-A1D5-2F0D843F279F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{39672094-CC09-464D-910F-038572BAF2F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IKriv.IsItMySource</RootNamespace>
-    <AssemblyName>IsItMySource</AssemblyName>
+    <RootNamespace>IKriv.IsItMySource.DiaSdk.Managed</RootNamespace>
+    <AssemblyName>IsItMySource.DiaSdk.Managed</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,6 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Dia2Lib">
+      <HintPath>..\..\..\..\..\..\temp\dia2\Dia2Lib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,26 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOperation.cs" />
-    <Compile Include="ListSources.cs" />
-    <Compile Include="Options.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="DiaSdk.cs" />
+    <Compile Include="DiaSdkDebugInfo.cs" />
+    <Compile Include="DiaSdkDebugInfoReader.cs" />
+    <Compile Include="DiaSdkSourceFileInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util.cs" />
-    <Compile Include="VerifySources.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IsItMySource.DiaSdk.Managed\IsItMySource.DiaSdk.Managed.csproj">
-      <Project>{39672094-cc09-464d-910f-038572baf2f7}</Project>
-      <Name>IsItMySource.DiaSdk.Managed</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IsItMySource.DiaSymReader\IsItMySource.DiaSymReader.csproj">
-      <Project>{d1dc7a29-4b92-4b44-be1b-092530994b81}</Project>
-      <Name>IsItMySource.DiaSymReader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IsItMySource.Interfaces\IsItMySource.Interfaces.csproj">
       <Project>{3c31dd10-3f72-445d-b06d-8aecc62d9153}</Project>
       <Name>IsItMySource.Interfaces</Name>
