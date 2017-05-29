@@ -1,51 +1,27 @@
-c:\ivan\dev\github\isitmysource\testprojects\vs2015test\win32consoleapp\myfunc.cpp MD5 0BEF7000E0C253A66928FBF2664696CC
-c:\ivan\dev\github\isitmysource\testprojects\vs2015test\win32consoleapp\program.cpp MD5 0FA5B7D722C9D7A2ECCD274E14104757
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\cmath MD5 6196FAFAA60DB251F444A5710CACEEB9
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception MD5 5B9FAA891BF1D49FD54D78674B6AD335
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\ios MD5 A1FECDC7E7A90A86479D61B84C9EF656
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\iosfwd MD5 A34A79668FB37D6889767ACCA1DA97A6
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\istream MD5 1D55628EDEA9B69E20C259B7C260FA62
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\limits MD5 F3EA5C18A23A0A32B4A48A6D682A56E9
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\ostream MD5 1C2BA58D5E8AD4C05EC13348EBBDB8E5
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\stdexcept MD5 74706F54937DF648A306FC4ED21FF889
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\streambuf MD5 B7FA9E0E200210D29C75261AC2D00486
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error MD5 0F45539CD53466F691D78D6E1B1CE78E
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\type_traits MD5 B9ECC2DE0898FB12FE69D120D1C07A61
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility MD5 F1FB965D91D33DAF49018DD569DB86EC
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\vadefs.h MD5 303C50A7BC924CD426BAA20C7F16192C
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_exception.h MD5 385CF08DA92F72075026067CE03F8402
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime_typeinfo.h MD5 2465A06B1F50CD26AD5EC7D20DA6DB3D
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xatomic0.h MD5 02B989438A691C490C318BCB1EAABC0A
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xfacet MD5 DBB98C82DC0747672F06FCCFB61B6998
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xiosbase MD5 DC5081FEED29ED510C60FF2F56271B1A
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocale MD5 02956F7671545B9D3F4C6DE49A080629
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocinfo MD5 A93E399B28F673B60F01CE023A4CC23E
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xlocnum MD5 A6D0D1AB9C3AF2C5B10F88477D005F60
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0 MD5 3F7F32C6B92D5CF87B17B2CDEF07F117
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstddef MD5 347B3D0CB12C8E7B43B0AF4715C5E451
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring MD5 A1BA4F4B706C8D60CABC08D099469FF0
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtgmath.h MD5 F5C47CC8CA6E0254AE2865C2907B802A
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xtr1common MD5 73F87316144F3D6908FD32784FEFBF75
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\xutility MD5 267CB213AC0B5C6C21CBC7A7D4682936
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_stdio_config.h MD5 035D8EF27E5026070E7650EA137714A0
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wconio.h MD5 1033A73D366E0663D8C3B9E9A6ABB7AC
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wio.h MD5 6FEAD1E5DE6888A11B11BFCADF5EA6E3
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wstdio.h MD5 2443DB19DCC585E308F60DAFEF1D4C4C
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wtime.h MD5 4FB7A84EDFFFAD49EFAA96980AAB259D
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\math.h MD5 23CC88BD1D9451C2CE5F824306E16E4D
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h MD5 2D5E699DF1BED89FCCCCCF0DCFC49050
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\sys\stat.h MD5 A4FCEE6DC4B1B77EC3347FEBE3AB3D45
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\wchar.h MD5 AB152FF8E43F2593E1DAFB163B82F9C6
-C:\Users\ivan\AppData\Local\Temp\lnk{FD5A07BA-2D2F-4848-9619-7A016ED95033}.tmp MD5 A353D12F29901935F17C812BAE451A23
+C:\ivan\dev\github\IsItMySource\TestProjects\Vs2015Test\ManagedCppConsoleApp\Debug\app.res MD5 EAB4B8B35E496ACED04578FE1215207B
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NONE 
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NONE 
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NONE 
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\managedcppconsoleapp.cpp MD5 9E6AEBDE2B8820C644684AB6E62F3FFD
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\stdafx.h MD5 330A7454A16D28684824830A1FD1FC1A
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\stdafx.h MD5 330A7454A16D28684824830A1FD1FC1A
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\mscorlib.dll NONE 
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.data.dll NONE 
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.dll NONE 
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.xml.dll NONE 
+C:\Users\ivan\AppData\Local\Temp\lnk{AB1FF238-8578-43A4-85DE-E082F471D658}.tmp MD5 A353D12F29901935F17C812BAE451A23
+c:\windows\microsoft.net\framework\v4.0.30319\mscorlib.dll NONE 
+f:\binaries.x86ret\inc\msclr\gcroot.h MD5 95CF79C0D45979604E2B0C9A730C3BC5
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\system.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\system.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\system.dll NONE 
+f:\dd\externalapis\unifiedcrt\inc\conio.h MD5 97672F0119438D20BF40182CF9F13092
+f:\dd\externalapis\unifiedcrt\inc\conio.h MD5 97672F0119438D20BF40182CF9F13092
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
@@ -64,16 +40,6 @@ f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326F
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
-f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353838EBF8
@@ -86,7 +52,10 @@ f:\dd\externalapis\unifiedcrt\inc\corecrt_memory.h MD5 96C01EE8E4C01B90601D93353
 f:\dd\externalapis\unifiedcrt\inc\corecrt_stdio_config.h MD5 79921ECB03C5C56E28D771ADF8910FD8
 f:\dd\externalapis\unifiedcrt\inc\corecrt_stdio_config.h MD5 79921ECB03C5C56E28D771ADF8910FD8
 f:\dd\externalapis\unifiedcrt\inc\corecrt_stdio_config.h MD5 79921ECB03C5C56E28D771ADF8910FD8
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstdio.h MD5 2443DB19DCC585E308F60DAFEF1D4C4C
+f:\dd\externalapis\unifiedcrt\inc\corecrt_wconio.h MD5 1033A73D366E0663D8C3B9E9A6ABB7AC
+f:\dd\externalapis\unifiedcrt\inc\corecrt_wconio.h MD5 1033A73D366E0663D8C3B9E9A6ABB7AC
+f:\dd\externalapis\unifiedcrt\inc\corecrt_wconio.h MD5 1033A73D366E0663D8C3B9E9A6ABB7AC
+f:\dd\externalapis\unifiedcrt\inc\corecrt_wio.h MD5 6FEAD1E5DE6888A11B11BFCADF5EA6E3
 f:\dd\externalapis\unifiedcrt\inc\corecrt_wstdio.h MD5 2443DB19DCC585E308F60DAFEF1D4C4C
 f:\dd\externalapis\unifiedcrt\inc\corecrt_wstdio.h MD5 2443DB19DCC585E308F60DAFEF1D4C4C
 f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
@@ -107,12 +76,6 @@ f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5
 f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
 f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
 f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
-f:\dd\externalapis\unifiedcrt\inc\corecrt_wstring.h MD5 2D923CBDE24BB8F217FE09A5F7D88929
 f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
 f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
 f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
@@ -131,16 +94,6 @@ f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
 f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
 f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
 f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\ctype.h MD5 386A22AB644E999820C7C22FCE5DB574
-f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
-f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
-f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
-f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
 f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
 f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
 f:\dd\externalapis\unifiedcrt\inc\malloc.h MD5 928553F8BA198C9030B65FA10B6B3DD2
@@ -165,7 +118,6 @@ f:\dd\externalapis\unifiedcrt\inc\math.h MD5 23CC88BD1D9451C2CE5F824306E16E4D
 f:\dd\externalapis\unifiedcrt\inc\math.h MD5 23CC88BD1D9451C2CE5F824306E16E4D
 f:\dd\externalapis\unifiedcrt\inc\stdio.h MD5 2D5E699DF1BED89FCCCCCF0DCFC49050
 f:\dd\externalapis\unifiedcrt\inc\stdio.h MD5 2D5E699DF1BED89FCCCCCF0DCFC49050
-f:\dd\externalapis\unifiedcrt\inc\stdio.h MD5 2D5E699DF1BED89FCCCCCF0DCFC49050
 f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
 f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
 f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
@@ -175,10 +127,6 @@ f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
 f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
 f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
 f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
-f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
-f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
-f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
-f:\dd\externalapis\unifiedcrt\inc\stdlib.h MD5 C44C7E39EE3B3A4EF6B3211EC0110AA8
 f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
 f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
 f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
@@ -197,12 +145,8 @@ f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
 f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
 f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
 f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
-f:\dd\externalapis\unifiedcrt\inc\string.h MD5 377E41F4DAE6F93EA819B4EFCF229F08
+f:\dd\externalapis\unifiedcrt\inc\tchar.h MD5 BFA0702298D84B840DB930FAFF19FCB2
+f:\dd\externalapis\unifiedcrt\inc\wchar.h MD5 AB152FF8E43F2593E1DAFB163B82F9C6
 f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
 f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
 f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
@@ -221,14 +165,6 @@ f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4
 f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
 f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
 f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\basetsd.h MD5 493F2CAB7A6BE4175748A9FC6C4A38FB
-f:\dd\externalapis\windows\8.1\sdk\inc\evntprov.h MD5 8A16383C445FDABF21BDBAC3825E8133
-f:\dd\externalapis\windows\8.1\sdk\inc\evntprov.h MD5 8A16383C445FDABF21BDBAC3825E8133
 f:\dd\externalapis\windows\8.1\sdk\inc\evntprov.h MD5 8A16383C445FDABF21BDBAC3825E8133
 f:\dd\externalapis\windows\8.1\sdk\inc\evntprov.h MD5 8A16383C445FDABF21BDBAC3825E8133
 f:\dd\externalapis\windows\8.1\sdk\inc\evntprov.h MD5 8A16383C445FDABF21BDBAC3825E8133
@@ -250,16 +186,10 @@ f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB
 f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
 f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
 f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
-f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
-f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
-f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
-f:\dd\externalapis\windows\8.1\sdk\inc\guiddef.h MD5 CA7D066706A198EA5999B084AAB0CE58
-f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
-f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
-f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
-f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
-f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
-f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
+f:\dd\externalapis\windows\8.1\sdk\inc\oleauto.h MD5 72AD4AAF9CAE8A9EC92282925977E43B
+f:\dd\externalapis\windows\8.1\sdk\inc\oleauto.h MD5 72AD4AAF9CAE8A9EC92282925977E43B
+f:\dd\externalapis\windows\8.1\sdk\inc\propidl.h MD5 03DCE76E8DF304751171CAD9D74B0BF7
+f:\dd\externalapis\windows\8.1\sdk\inc\propidl.h MD5 03DCE76E8DF304751171CAD9D74B0BF7
 f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
 f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
 f:\dd\externalapis\windows\8.1\sdk\inc\stralign.h MD5 DCC558DEFD73C17745F94CC5A98632D9
@@ -296,12 +226,6 @@ f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A3
 f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
 f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
 f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
-f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
-f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
-f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
-f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
-f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
-f:\dd\externalapis\windows\8.1\sdk\inc\winbase.h MD5 C3412F163DF064CCDEF8CFBE0A387550
 f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
 f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
 f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
@@ -320,18 +244,16 @@ f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD15
 f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
 f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
 f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winerror.h MD5 B38ACA278420B7C5F25A50AD159CACA0
-f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
-f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
-f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
-f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
-f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
-f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
+f:\dd\externalapis\windows\8.1\sdk\inc\wingdi.h MD5 8C9B6D82DD392D7999B041CC69D0A0D1
+f:\dd\externalapis\windows\8.1\sdk\inc\wingdi.h MD5 8C9B6D82DD392D7999B041CC69D0A0D1
+f:\dd\externalapis\windows\8.1\sdk\inc\wingdi.h MD5 8C9B6D82DD392D7999B041CC69D0A0D1
+f:\dd\externalapis\windows\8.1\sdk\inc\wingdi.h MD5 8C9B6D82DD392D7999B041CC69D0A0D1
+f:\dd\externalapis\windows\8.1\sdk\inc\wingdi.h MD5 8C9B6D82DD392D7999B041CC69D0A0D1
+f:\dd\externalapis\windows\8.1\sdk\inc\winnls.h MD5 0C96B0BB5AB932BA577E4DD0558C895D
+f:\dd\externalapis\windows\8.1\sdk\inc\winnls.h MD5 0C96B0BB5AB932BA577E4DD0558C895D
+f:\dd\externalapis\windows\8.1\sdk\inc\winnls.h MD5 0C96B0BB5AB932BA577E4DD0558C895D
+f:\dd\externalapis\windows\8.1\sdk\inc\winnls.h MD5 0C96B0BB5AB932BA577E4DD0558C895D
+f:\dd\externalapis\windows\8.1\sdk\inc\winnls.h MD5 0C96B0BB5AB932BA577E4DD0558C895D
 f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
 f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
 f:\dd\externalapis\windows\8.1\sdk\inc\winnt.h MD5 ADDFD8BEB612E9A30D5FB7C44F9F3D37
@@ -359,14 +281,13 @@ f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0
 f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
 f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
 f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
-f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
-f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
-f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
-f:\dd\externalapis\windows\8.1\sdk\inc\winuser.h MD5 F9FC1E83CBE1A51209ED1C05BB0F70B2
-f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
-f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
-f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
-f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
+f:\dd\vctools\crt\crtw32\h\minternal.h MD5 BBE609F847F4BBC0F8DB78BFE1B22F2B
+f:\dd\vctools\crt\crtw32\h\minternal.h MD5 BBE609F847F4BBC0F8DB78BFE1B22F2B
+f:\dd\vctools\crt\crtw32\msilcrt\mcrtexe.cpp MD5 8F1BFCECC1FDACDCA53B65AC590463E8
+f:\dd\vctools\crt\crtw32\msilcrt\msilexit.cpp MD5 7CA915B81C956BFD6DE59FBEBB1E5811
+f:\dd\vctools\crt\crtw32\msilcrt\mstartup.cpp MD5 81B22598936517DC0BB8D52AEE7F1E14
+f:\dd\vctools\crt\crtw32\msilcrt\puremsilcode.cpp MD5 0414C7D48F2218B689D4CB34DE1EF0DF
+f:\dd\vctools\crt\vcruntime\inc\ehassert.h MD5 B4E08789617C6771FA7EC23A77AEE509
 f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
 f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
 f:\dd\vctools\crt\vcruntime\inc\i386\xmmintrin.h MD5 E4963431577926D9BA190CD6C10F8743
@@ -395,14 +316,10 @@ f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D566
 f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
 f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
 f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
-f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
-f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
-f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
-f:\dd\vctools\crt\vcruntime\inc\internal_shared.h MD5 9393435BC7FDE9F624E309D56629171A
+f:\dd\vctools\crt\vcruntime\inc\trnsctrl.h MD5 5776F9DAB036CECB43706D5A6A443A35
 f:\dd\vctools\crt\vcruntime\inc\vadefs.h MD5 303C50A7BC924CD426BAA20C7F16192C
 f:\dd\vctools\crt\vcruntime\inc\vadefs.h MD5 303C50A7BC924CD426BAA20C7F16192C
 f:\dd\vctools\crt\vcruntime\inc\vadefs.h MD5 303C50A7BC924CD426BAA20C7F16192C
-f:\dd\vctools\crt\vcruntime\inc\vcruntime_exception.h MD5 385CF08DA92F72075026067CE03F8402
 f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
 f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
 f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
@@ -412,11 +329,7 @@ f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DA
 f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
 f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
 f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
-f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
-f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
-f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
-f:\dd\vctools\crt\vcruntime\inc\vcruntime_new.h MD5 A40485987BE01BAF5F57569A41DAB837
-f:\dd\vctools\crt\vcruntime\inc\vcruntime_typeinfo.h MD5 2465A06B1F50CD26AD5EC7D20DA6DB3D
+f:\dd\vctools\crt\vcstartup\inc\vcstartup_internal.h MD5 7C388EF80868D8301B5A908485637FEE
 f:\dd\vctools\crt\vcstartup\inc\vcstartup_internal.h MD5 7C388EF80868D8301B5A908485637FEE
 f:\dd\vctools\crt\vcstartup\inc\vcstartup_internal.h MD5 7C388EF80868D8301B5A908485637FEE
 f:\dd\vctools\crt\vcstartup\inc\vcstartup_internal.h MD5 7C388EF80868D8301B5A908485637FEE
@@ -425,37 +338,21 @@ f:\dd\vctools\crt\vcstartup\inc\vcstartup_internal.h MD5 7C388EF80868D8301B5A908
 f:\dd\vctools\crt\vcstartup\inc\vcstartup_internal.h MD5 7C388EF80868D8301B5A908485637FEE
 f:\dd\vctools\crt\vcstartup\src\defaults\argv_mode.cpp MD5 634D3D57BDE292817F77F8DBF366E2D2
 f:\dd\vctools\crt\vcstartup\src\defaults\commit_mode.cpp MD5 CF5B0F6243121A3F5E206E07CA457128
-f:\dd\vctools\crt\vcstartup\src\defaults\default_local_stdio_options.cpp MD5 E6391682D136711F96E730F4D6162E0C
-f:\dd\vctools\crt\vcstartup\src\defaults\default_precision.cpp MD5 9621B7E7C6A138B5185711F98CCC568E
-f:\dd\vctools\crt\vcstartup\src\defaults\denormal_control.cpp MD5 0513001DBCB8CB8F8561DC117FD943BA
-f:\dd\vctools\crt\vcstartup\src\defaults\env_mode.cpp MD5 5B7121FC3210A120D7B70CB668D8EF0C
 f:\dd\vctools\crt\vcstartup\src\defaults\file_mode.cpp MD5 749603C05EB2FB5024819A3107DA9A7D
-f:\dd\vctools\crt\vcstartup\src\defaults\invalid_parameter_handler.cpp MD5 0C385FD7C6DB91E0BA7C72C1AB680BE6
 f:\dd\vctools\crt\vcstartup\src\defaults\matherr.cpp MD5 F8B3DAD79F14E4169CCBA611203C89CD
 f:\dd\vctools\crt\vcstartup\src\defaults\new_mode.cpp MD5 4F22B6A5E4E0D01E8C000B17F2B2640D
 f:\dd\vctools\crt\vcstartup\src\defaults\thread_locale.cpp MD5 435F5F51541F7D6565DF6BE20F8AC8A3
 f:\dd\vctools\crt\vcstartup\src\eh\i386\chandler4gs.c MD5 D014BFD91FD6D4163AF92452CBC9EEA0
 f:\dd\vctools\crt\vcstartup\src\eh\i386\secchk.c MD5 6C34B4E5ACA82CB0D6BD6CB8C059C9C9
-f:\dd\vctools\crt\vcstartup\src\eh\tncleanup.cpp MD5 984A18787250F7F6D0506E6BC1FD7991
+f:\dd\vctools\crt\vcstartup\src\eh\managdeh.cpp MD5 9333AF823EBFC24BE18249F78E5C1FF7
 f:\dd\vctools\crt\vcstartup\src\gs\gs_report.c MD5 87566AA39C18DD3CEAC021002D34B63D
 f:\dd\vctools\crt\vcstartup\src\gs\gs_support.c MD5 57AC84319EF78F67DAA9372FDA8CBFCC
 f:\dd\vctools\crt\vcstartup\src\misc\checkcfg.c MD5 9552C4FC4125F9D7D3A8B5FD18B7BCCF
 f:\dd\vctools\crt\vcstartup\src\misc\guard_support.c MD5 8BFBA3D0672A148A9FB0E9F0A6BC256D
 f:\dd\vctools\crt\vcstartup\src\misc\i386\cpu_disp.c MD5 884E12AC852D3B4E1E625A0F01595A68
-f:\dd\vctools\crt\vcstartup\src\rtc\error.cpp MD5 351CDBD9AE85F4EB5223C4A0E34C1700
-f:\dd\vctools\crt\vcstartup\src\rtc\init.cpp MD5 76EE0ED5055F1AFBDDF4B2EB8B387E01
 f:\dd\vctools\crt\vcstartup\src\rtc\initsect.cpp MD5 DD3FFC8C4284997F6762C449313244B2
-f:\dd\vctools\crt\vcstartup\src\rtc\pdblkup.cpp MD5 218C49F5B039DD41818421C30D9371C8
-f:\dd\vctools\crt\vcstartup\src\rtc\stack.cpp MD5 9039D85B7D3B9830910B73C47C312CB0
-f:\dd\vctools\crt\vcstartup\src\rtc\userapi.cpp MD5 FFFBEE536FB7A7EDD9CDA99E4EC604AD
-f:\dd\vctools\crt\vcstartup\src\startup\exe_common.inl MD5 4F451DA8A96EA0745EF584F4B5A05673
-f:\dd\vctools\crt\vcstartup\src\startup\exe_main.cpp MD5 B71A807A307A52C400179EF5D3FAA1A7
-f:\dd\vctools\crt\vcstartup\src\utility\dyn_tls_dtor.c MD5 EE3858E06B118BDBAAE53F5E55B0BB0C
-f:\dd\vctools\crt\vcstartup\src\utility\dyn_tls_init.c MD5 9DA48F59075BBAAAB4F7FC4575F34405
-f:\dd\vctools\crt\vcstartup\src\utility\matherr_detection.c MD5 2DF28D8BA8B7AAAA67C94719B214B060
 f:\dd\vctools\crt\vcstartup\src\utility\ucrt_detection.c MD5 737902C62D7458629D0DDD52E122C033
 f:\dd\vctools\crt\vcstartup\src\utility\ucrt_stubs.cpp MD5 20976B3B6CD70F2DF77312D18D9C8D32
 f:\dd\vctools\crt\vcstartup\src\utility\utility.cpp MD5 2D42DDF1AAE9B3491E4BB346255346D5
 f:\dd\vctools\crt\vcstartup\src\utility\utility_desktop.cpp MD5 CC9AAE4BAA114C08FFC7F1515EC09E4C
-f:\dd\vctools\langapi\include\cvinfo.h MD5 11188CAB8D0CB527DC846CD98114A875
-f:\dd\vctools\langapi\include\pdb.h MD5 3687B6F9721B561A0D5D9D396AD85464
+f:\dd\vctools\langapi\include\vcclr.h MD5 0BD987A3FD614AD46A941A02CB6A3EAE
