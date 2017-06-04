@@ -36,7 +36,7 @@ namespace IKriv.IsItMySource
             _fileVerifier = fileVerifier;
         }
 
-        public void Run(IEnumerable<ISourceFileInfo> sources, Options options)
+        public void Run(IEnumerable<SourceFileInfo> sources, Options options)
         {
             int nLeftOut = 0;
             int nFailedVerification = 0;

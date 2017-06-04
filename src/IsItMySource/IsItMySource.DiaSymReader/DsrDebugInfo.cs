@@ -51,20 +51,20 @@ namespace IKriv.IsItMySource.DiaSymReader
         }
 
 
-        public IEnumerable<ISourceFileInfo> GetSourceFiles()
+        public IEnumerable<SourceFileInfo> GetSourceFiles()
         {
 
             int count;
             Ensure.Success("GetDocuments(), reading documents count", _reader.GetDocuments(0, out count, null));
 
-            if (count == 0) return Enumerable.Empty<ISourceFileInfo>();
+            if (count == 0) return Enumerable.Empty<SourceFileInfo>();
 
             var docs = new ISymUnmanagedDocument[count];
             Ensure.Success("_reader.GetDocuments()", _reader.GetDocuments(count, out count, docs));
 
             try
             {
-                var sources = docs.Select(d => new DsrSourceFileInfo(d)).ToArray();
+                var sources = docs.Select(DsrSourceFileInfo.Create).ToArray();
                 return sources;
             }
             finally

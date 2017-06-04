@@ -8,7 +8,7 @@ namespace IKriv.IsItMySource
 {
     internal class FileVerifier : IFileVerifier
     {
-        public VerificationRecord Run(ISourceFileInfo fileInfo, Options options)
+        public VerificationRecord Run(SourceFileInfo fileInfo, Options options)
         {
             var path = fileInfo.Path;
             var relativePath = Util.GetRelativePath(path, options.RootPath);
@@ -23,7 +23,7 @@ namespace IKriv.IsItMySource
             return result;
         }
 
-        private VerificationStatus VerifyFileImpl(ISourceFileInfo fileInfo, string relativePath, Options options)
+        private VerificationStatus VerifyFileImpl(SourceFileInfo fileInfo, string relativePath, Options options)
         {
 
             if (relativePath == null) return VerificationStatus.Skipped;

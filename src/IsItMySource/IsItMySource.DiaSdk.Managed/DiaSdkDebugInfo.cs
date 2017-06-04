@@ -46,9 +46,9 @@ namespace IKriv.IsItMySource.DiaSdk.Managed
             if (_diaSource != null) Marshal.ReleaseComObject(_diaSource);
         }
 
-        public IEnumerable<ISourceFileInfo> GetSourceFiles()
+        public IEnumerable<SourceFileInfo> GetSourceFiles()
         {
-            var result = new List<ISourceFileInfo>();
+            var result = new List<SourceFileInfo>();
 
             IDiaEnumSymbols enumSymbols;
             _globalScope.findChildren(SymTagEnum.SymTagCompiland, null, 0, out enumSymbols);
@@ -76,7 +76,7 @@ namespace IKriv.IsItMySource.DiaSdk.Managed
                             enumSourceFiles.Next(1, out sourceFile, out nElements2);
                             if (nElements2 != 1) break;
 
-                            result.Add(new DiaSdkSourceFileInfo(sourceFile));
+                            result.Add(DiaSdkSourceFileInfo.Create(sourceFile));
                         }
                     }
                     finally

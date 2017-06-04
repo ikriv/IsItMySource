@@ -5,6 +5,6 @@ namespace IKriv.IsItMySource
 {
     internal interface IOperation
     {
-        void Run(IEnumerable<ISourceFileInfo> sources, Options options);
+        void Run(IEnumerable<SourceFileInfo> sources, Options options);
     }
 }

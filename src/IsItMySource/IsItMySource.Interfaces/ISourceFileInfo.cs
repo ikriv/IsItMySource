@@ -9,11 +9,11 @@
     }
 
 
-    public interface ISourceFileInfo
+    public class SourceFileInfo
     {
-        string Path { get;  }
-        ChecksumType ChecksumType { get; }
-        string ChecksumTypeStr { get;  }
-        byte[] Checksum { get; }
+        public string Path { get; set; }
+        public ChecksumType ChecksumType { get; set; }
+        public string ChecksumTypeStr { get; set; }
+        public byte[] Checksum { get; set; }
     }
 }

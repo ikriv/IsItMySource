@@ -5,6 +5,6 @@ namespace IKriv.IsItMySource.Interfaces
 {
     public interface IDebugInfo : IDisposable
     {
-        IEnumerable<ISourceFileInfo> GetSourceFiles();
+        IEnumerable<SourceFileInfo> GetSourceFiles();
     }
 }

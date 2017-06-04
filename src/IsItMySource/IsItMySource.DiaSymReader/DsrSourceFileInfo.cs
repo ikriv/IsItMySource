@@ -4,7 +4,7 @@ using Microsoft.DiaSymReader;
 
 namespace IKriv.IsItMySource.DiaSymReader
 {
-    internal class DsrSourceFileInfo : ISourceFileInfo
+    internal static class DsrSourceFileInfo
     {
         private static class CorSym
         {
@@ -15,8 +15,9 @@ namespace IKriv.IsItMySource.DiaSymReader
 
         private static readonly byte[] EmptyByteArray = new byte[0];
 
-        public DsrSourceFileInfo(ISymUnmanagedDocument doc)
+        public static SourceFileInfo Create(ISymUnmanagedDocument doc)
         {
+            var result = new SourceFileInfo();
             if (doc == null) throw new ArgumentNullException(nameof(doc));
 
             int len;
@@ -26,19 +27,19 @@ namespace IKriv.IsItMySource.DiaSymReader
             {
                 var urlChars = new char[len];
                 Ensure.Success("doc.getUrl()", doc.GetUrl(len, out len, urlChars));
-                Path = new string(urlChars, 0, len - 1);
+                result.Path = new string(urlChars, 0, len - 1);
             }
 
             Ensure.Success("doc.GetChecksum(), getting checksum size", doc.GetChecksum(0, out len, null));
 
             if (len == 0)
             {
-                Checksum = EmptyByteArray;
+                result.Checksum = EmptyByteArray;
             }
             else
             {
-                Checksum = new byte[len];
-                Ensure.Success("doc.GetChecksum()", doc.GetChecksum(len, out len, Checksum));
+                result.Checksum = new byte[len];
+                Ensure.Success("doc.GetChecksum()", doc.GetChecksum(len, out len, result.Checksum));
             }
 
             Guid id = Guid.Empty;
@@ -46,28 +47,25 @@ namespace IKriv.IsItMySource.DiaSymReader
 
             if (id == CorSym.SourceHashMd5)
             {
-                ChecksumType = ChecksumType.Md5;
-                ChecksumTypeStr = "MD5";
+                result.ChecksumType = ChecksumType.Md5;
+                result.ChecksumTypeStr = "MD5";
             }
             else if (id == CorSym.SourceHashSha1)
             {
-                ChecksumType = ChecksumType.Sha1;
-                ChecksumTypeStr = "SHA1";
+                result.ChecksumType = ChecksumType.Sha1;
+                result.ChecksumTypeStr = "SHA1";
             }
             else if (id == Guid.Empty)
             {
-                ChecksumType = ChecksumType.None;
+                result.ChecksumType = ChecksumType.None;
             }
             else
             {
-                ChecksumType = ChecksumType.Unknown;
-                ChecksumTypeStr = id.ToString();
+                result.ChecksumType = ChecksumType.Unknown;
+                result.ChecksumTypeStr = id.ToString();
             }
-        }
 
-        public string Path { get; private set; }
-        public ChecksumType ChecksumType { get; private set; }
-        public string ChecksumTypeStr { get; private set; }
-        public byte[] Checksum { get; private set; }
+            return result;
+        }
     }
 }

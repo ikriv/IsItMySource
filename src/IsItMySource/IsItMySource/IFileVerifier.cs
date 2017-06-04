@@ -4,6 +4,6 @@ namespace IKriv.IsItMySource
 {
     interface IFileVerifier
     {
-        VerificationRecord Run(ISourceFileInfo fileInfo, Options options);
+        VerificationRecord Run(SourceFileInfo fileInfo, Options options);
     }
 }

@@ -5,7 +5,7 @@ namespace IKriv.IsItMySource
 {
     internal class VerificationRecord
     {
-        public ISourceFileInfo FileInfo { get; set; }
+        public SourceFileInfo FileInfo { get; set; }
         public string RelativePath { get; set; }
         public VerificationStatus Status { get; set; }
     }

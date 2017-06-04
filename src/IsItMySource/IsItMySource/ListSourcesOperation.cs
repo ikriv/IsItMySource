@@ -13,7 +13,7 @@ namespace IKriv.IsItMySource
             _output = output;
         }
 
-        public void Run(IEnumerable<ISourceFileInfo> sources, Options options)
+        public void Run(IEnumerable<SourceFileInfo> sources, Options options)
         {
             int nLeftOut = 0;
 
