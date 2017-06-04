@@ -1,14 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using IKriv.IsItMySource.Interfaces;
 
 namespace IKriv.IsItMySource
 {
     internal class VerifySources : IOperation
     {
+        private static readonly Dictionary<VerificationStatus, string> ShortStatusStr =
+            new Dictionary<VerificationStatus, string>
+            {
+                {VerificationStatus.Skipped, "SKIPPED"},
+                {VerificationStatus.SameChecksum, "VERIFIED"},
+                {VerificationStatus.DifferentChecksum, "DIFFERENT"},
+                {VerificationStatus.Missing, "MISSING"},
+                {VerificationStatus.NoChecksum, "PRESENT"},
+                {VerificationStatus.UnknownChecksumType, "PRESENT"},
+                {VerificationStatus.CouldNotCalculateChecksum, "ERROR"}
+            };
+
+   
+
         public void Run(IEnumerable<ISourceFileInfo> sources, Options options)
         {
             int nLeftOut = 0;
@@ -16,15 +28,16 @@ namespace IKriv.IsItMySource
 
             foreach (var doc in sources.OrderBy(s => s.Path))
             {
-                var relativePath = Util.GetRelativePath(doc.Path, options.RootPath);
-                if (relativePath == null)
+                var record = Report(VerifyFile.Run(doc, options));
+                if (record.Status == VerificationStatus.Skipped)
                 {
                     ++nLeftOut;
-                    continue;
+                }
+                else if (record.Status != VerificationStatus.SameChecksum)
+                {
+                    ++nFailedVerification;
                 }
 
-                if (!VerifyFile(doc, relativePath, options)) ++nFailedVerification;
-                Console.WriteLine($" {relativePath} {doc.ChecksumTypeStr} {Util.ToHex(doc.Checksum)}");
             }
 
             if (nFailedVerification > 0)
@@ -38,72 +51,22 @@ namespace IKriv.IsItMySource
             }
         }
 
-        private bool VerifyFile(ISourceFileInfo fileInfo, string relativePath, Options options)
+        private static string GetShortStatusStr(VerificationStatus status)
         {
-            var localRoot = options.LocalRootPath ?? options.RootPath;
-            var localPath = String.IsNullOrEmpty(localRoot)
-                ? relativePath
-                : Path.Combine(localRoot, relativePath);
-
-            if (!File.Exists(localPath))
-            {
-                Console.Write("NOT FOUND");
-                return false;
-            }
-
-            if (fileInfo.ChecksumType == ChecksumType.None)
-            {
-                Console.Write("NO CHKSUM");
-                return false;
-            }
-
-            if (fileInfo.ChecksumType == ChecksumType.Unknown)
-            {
-                Console.Write("UNKNOWN  ");
-                return false;
-            }
-
-            var localChecksum = ComputeChecksum(localPath, fileInfo.ChecksumType);
-            if (localChecksum == null)
-            {
-                Console.Write("ERROR    ");
-                return false;
-            }
-
-            if (!localChecksum.SequenceEqual(fileInfo.Checksum))
-            {
-                Console.Write("DIFFERENT");
-                return false;
-            }
-
-            Console.Write("VERIFIED ");
-            return true;
+            string result;
+            if (!ShortStatusStr.TryGetValue(status, out result)) result = status.ToString();
+            return result;
         }
 
-        private byte[] ComputeChecksum(string path, ChecksumType checksumType)
+        private static VerificationRecord Report(VerificationRecord r)
         {
-            using (var algo = CreateAlgo(checksumType))
-            {
-                try
-                {
-                    return algo.ComputeHash(File.ReadAllBytes(path));
-                }
-                catch (Exception e)
-                {
-                    Console.Error.WriteLine(e);
-                    return null;
-                }
-            }
-        }
+            if (r.Status == VerificationStatus.Skipped) return r;
 
-        private static HashAlgorithm CreateAlgo(ChecksumType checksumType)
-        {
-            switch (checksumType)
-            {
-                case ChecksumType.Sha1: return SHA1.Create();
-                case ChecksumType.Md5: return MD5.Create();
-                default: throw new NotSupportedException("Checksum type not supported: " + checksumType);
-            }
+            var statusStr = GetShortStatusStr(r.Status);
+            var checksumStr = Util.ToHex(r.FileInfo.Checksum);
+            Console.Write("{0,-10}", statusStr);
+            Console.WriteLine($"{r.RelativePath} {r.FileInfo.ChecksumTypeStr} {checksumStr}");
+            return r;
         }
 
     }

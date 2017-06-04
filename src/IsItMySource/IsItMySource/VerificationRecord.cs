@@ -1,0 +1,12 @@
+﻿using System.IO;
+using IKriv.IsItMySource.Interfaces;
+
+namespace IKriv.IsItMySource
+{
+    internal class VerificationRecord
+    {
+        public ISourceFileInfo FileInfo { get; set; }
+        public string RelativePath { get; set; }
+        public VerificationStatus Status { get; set; }
+    }
+}
