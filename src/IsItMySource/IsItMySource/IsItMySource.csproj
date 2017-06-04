@@ -42,16 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IFileVerifier.cs" />
     <Compile Include="IOperation.cs" />
-    <Compile Include="ListSources.cs" />
+    <Compile Include="ListSourcesOperation.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VerificationRecord.cs" />
     <Compile Include="VerificationStatus.cs" />
-    <Compile Include="VerifyFile.cs" />
-    <Compile Include="VerifySources.cs" />
+    <Compile Include="FileVerifier.cs" />
+    <Compile Include="VerifySourcesOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

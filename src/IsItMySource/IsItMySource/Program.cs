@@ -37,7 +37,8 @@ namespace IKriv.IsItMySource
             using (var debugInfo = reader.GetDebugInfo(options.ExeOrPdbPath, options.PdbSearchPath))
             {
                 var sources = debugInfo.GetSourceFiles();
-                CreateOperation(options.Operation).Run(sources, options);
+                var operation = CreateOperation(options.Operation, Console.Out);
+                operation.Run(sources, options);
             }
         }
 
@@ -59,12 +60,12 @@ namespace IKriv.IsItMySource
             }
         }
 
-        private static IOperation CreateOperation(Operation op)
+        private static IOperation CreateOperation(Operation op, TextWriter output)
         {
             switch (op)
             {
-                case Operation.List: return new ListSources();
-                case Operation.Verify: return new VerifySources();
+                case Operation.List: return new ListSourcesOperation(output);
+                case Operation.Verify: return new VerifySourcesOperation(output);
                 default:
                     throw new InvalidOperationException("Unknown operation: " + op);
             }

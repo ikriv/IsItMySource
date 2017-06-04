@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource", "IsItMySource\IsItMySource.csproj", "{9B20549F-DC1F-4B04-A1D5-2F0D843F279F}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource.DiaSymReader", "IsItMySource.DiaSymReader\IsItMySource.DiaSymReader.csproj", "{D1DC7A29-4B92-4B44-BE1B-092530994B81}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource.DiaSdk.Managed", "IsItMySource.DiaSdk.Managed\IsItMySource.DiaSdk.Managed.csproj", "{39672094-CC09-464D-910F-038572BAF2F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsItMySource.Tests", "IsItMySource.Tests\IsItMySource.Tests.csproj", "{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,18 @@ Global
 		{39672094-CC09-464D-910F-038572BAF2F7}.Release|x64.Build.0 = Release|Any CPU
 		{39672094-CC09-464D-910F-038572BAF2F7}.Release|x86.ActiveCfg = Release|Any CPU
 		{39672094-CC09-464D-910F-038572BAF2F7}.Release|x86.Build.0 = Release|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Debug|x64.Build.0 = Debug|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Release|x64.ActiveCfg = Release|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Release|x64.Build.0 = Release|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9A66B35-B87C-410D-BC72-54B7C1F97B7E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

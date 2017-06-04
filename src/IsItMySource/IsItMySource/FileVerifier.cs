@@ -6,9 +6,9 @@ using IKriv.IsItMySource.Interfaces;
 
 namespace IKriv.IsItMySource
 {
-    internal static class VerifyFile
+    internal class FileVerifier : IFileVerifier
     {
-        public static VerificationRecord Run(ISourceFileInfo fileInfo, Options options)
+        public VerificationRecord Run(ISourceFileInfo fileInfo, Options options)
         {
             var path = fileInfo.Path;
             var relativePath = Util.GetRelativePath(path, options.RootPath);
@@ -23,7 +23,7 @@ namespace IKriv.IsItMySource
             return result;
         }
 
-        private static VerificationStatus VerifyFileImpl(ISourceFileInfo fileInfo, string relativePath, Options options)
+        private VerificationStatus VerifyFileImpl(ISourceFileInfo fileInfo, string relativePath, Options options)
         {
 
             if (relativePath == null) return VerificationStatus.Skipped;
@@ -44,7 +44,7 @@ namespace IKriv.IsItMySource
             return VerificationStatus.SameChecksum;
         }
 
-        private static byte[] ComputeChecksum(string path, ChecksumType checksumType)
+        private byte[] ComputeChecksum(string path, ChecksumType checksumType)
         {
             using (var algo = CreateAlgo(checksumType))
             {
@@ -60,7 +60,7 @@ namespace IKriv.IsItMySource
             }
         }
 
-        private static HashAlgorithm CreateAlgo(ChecksumType checksumType)
+        private HashAlgorithm CreateAlgo(ChecksumType checksumType)
         {
             switch (checksumType)
             {

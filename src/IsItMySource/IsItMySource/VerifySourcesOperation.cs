@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using IKriv.IsItMySource.Interfaces;
 
 namespace IKriv.IsItMySource
 {
-    internal class VerifySources : IOperation
+    internal class VerifySourcesOperation : IOperation
     {
         private static readonly Dictionary<VerificationStatus, string> ShortStatusStr =
             new Dictionary<VerificationStatus, string>
@@ -19,7 +19,22 @@ namespace IKriv.IsItMySource
                 {VerificationStatus.CouldNotCalculateChecksum, "ERROR"}
             };
 
-   
+        private readonly TextWriter _output;
+        private readonly IFileVerifier _fileVerifier;
+
+        // production constructor
+        public VerifySourcesOperation(TextWriter output)
+            :
+            this(output, new FileVerifier())
+        {
+        }
+
+        // test constructor
+        public VerifySourcesOperation(TextWriter output, IFileVerifier fileVerifier)
+        {
+            _output = output;
+            _fileVerifier = fileVerifier;
+        }
 
         public void Run(IEnumerable<ISourceFileInfo> sources, Options options)
         {
@@ -28,7 +43,7 @@ namespace IKriv.IsItMySource
 
             foreach (var doc in sources.OrderBy(s => s.Path))
             {
-                var record = Report(VerifyFile.Run(doc, options));
+                var record = Report(_fileVerifier.Run(doc, options));
                 if (record.Status == VerificationStatus.Skipped)
                 {
                     ++nLeftOut;
@@ -42,12 +57,12 @@ namespace IKriv.IsItMySource
 
             if (nFailedVerification > 0)
             {
-                Console.WriteLine($"{nFailedVerification} file(s) failed verification");
+                _output.WriteLine($"{nFailedVerification} file(s) failed verification");
             }
 
             if (nLeftOut > 0)
             {
-                Console.WriteLine($"{nLeftOut} file(s) outside of {options.RootPath}");
+                _output.WriteLine($"{nLeftOut} file(s) outside of {options.RootPath}");
             }
         }
 
@@ -58,16 +73,15 @@ namespace IKriv.IsItMySource
             return result;
         }
 
-        private static VerificationRecord Report(VerificationRecord r)
+        private VerificationRecord Report(VerificationRecord r)
         {
             if (r.Status == VerificationStatus.Skipped) return r;
 
             var statusStr = GetShortStatusStr(r.Status);
             var checksumStr = Util.ToHex(r.FileInfo.Checksum);
-            Console.Write("{0,-10}", statusStr);
-            Console.WriteLine($"{r.RelativePath} {r.FileInfo.ChecksumTypeStr} {checksumStr}");
+            _output.Write("{0,-10}", statusStr);
+            _output.WriteLine($"{r.RelativePath} {r.FileInfo.ChecksumTypeStr} {checksumStr}");
             return r;
         }
-
     }
 }

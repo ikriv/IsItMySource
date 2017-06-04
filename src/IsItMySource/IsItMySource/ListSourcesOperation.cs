@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using IKriv.IsItMySource.Interfaces;
 
 namespace IKriv.IsItMySource
 {
-    internal class ListSources : IOperation
+    internal class ListSourcesOperation : IOperation
     {
+        private readonly TextWriter _output;
+        public ListSourcesOperation(TextWriter output)
+        {
+            _output = output;
+        }
+
         public void Run(IEnumerable<ISourceFileInfo> sources, Options options)
         {
             int nLeftOut = 0;
@@ -19,12 +25,12 @@ namespace IKriv.IsItMySource
                     ++nLeftOut;
                     continue;
                 }
-                Console.WriteLine($"{relativePath} {doc.ChecksumTypeStr} {Util.ToHex(doc.Checksum)}");
+                _output.WriteLine($"{relativePath} {doc.ChecksumTypeStr} {Util.ToHex(doc.Checksum)}");
             }
 
             if (nLeftOut > 0)
             {
-                Console.WriteLine($"{nLeftOut} file(s) outside of {options.RootPath}");
+                _output.WriteLine($"{nLeftOut} file(s) outside of {options.RootPath}");
             }
         }
     }
