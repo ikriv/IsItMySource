@@ -19,7 +19,7 @@ set EXE=..\src\IsItMySource\IsItMySource\bin\Debug\IsItMySource.exe
 set INFILE=%1
 set OUTFILE=dia_%INFILE:\=_%.txt
 echo %INFILE%
-%EXE% list %INFILE% --use diasdk >%OUTFILE%
+%EXE% --native %INFILE% >%OUTFILE%
 
 :End
 

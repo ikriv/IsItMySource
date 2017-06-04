@@ -33,7 +33,7 @@ namespace IKriv.IsItMySource
                 throw new InvalidOperationException("File does not exist: " + options.ExeOrPdbPath);
             }
 
-            var reader = GetReader(options.UseMethod);
+            var reader = GetReader(options.EngineName);
             using (var debugInfo = reader.GetDebugInfo(options.ExeOrPdbPath, options.PdbSearchPath))
             {
                 var sources = debugInfo.GetSourceFiles();
@@ -41,21 +41,21 @@ namespace IKriv.IsItMySource
             }
         }
 
-        private static IDebugInfoReader GetReader(string method)
+        private static IDebugInfoReader GetReader(string engine)
         {
             // TODO: add dynamic reader plugin loading mechanism
-            if (method == null) method = "DiaSymReader";
-            switch (method.ToLower())
+            if (engine == null) engine = "DiaSymReader";
+            switch (engine.ToLower())
             {
                 case "diasymreader":
                     return new DsrDebugInfoReader();
 
-                case "diasdk":
+                case "diasdk.managed":
                     return new DiaSdkDebugInfoReader();
 
 
                 default:
-                    throw new NotSupportedException("Unknown debug info retrieval method: " + method);
+                    throw new NotSupportedException("Unknown debug info retrieval engine: " + engine);
             }
         }
 

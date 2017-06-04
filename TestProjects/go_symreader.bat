@@ -17,7 +17,7 @@ set EXE=..\src\IsItMySource\IsItMySource\bin\Debug\IsItMySource.exe
 set INFILE=%1
 set OUTFILE=sym_%INFILE:\=_%.txt
 echo %INFILE%
-%EXE% list %INFILE% >%OUTFILE%
+%EXE% %INFILE% >%OUTFILE%
 
 :End
 
