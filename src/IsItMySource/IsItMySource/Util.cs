@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 
 namespace IKriv.IsItMySource
 {
@@ -9,6 +10,13 @@ namespace IKriv.IsItMySource
         {
             if (ba == null) return "(null)";
             return BitConverter.ToString(ba).Replace("-", "");
+        }
+
+        public static byte[] ToByteArray(string hex)
+        {
+            return Enumerable.Range(0, hex.Length / 2)
+                .Select(x => Convert.ToByte(hex.Substring(x * 2, 2), 16))
+                .ToArray();
         }
 
         public static string GetRelativePath(string path, string root)
@@ -22,7 +30,6 @@ namespace IKriv.IsItMySource
             if (path[len] == '\\') len++;
             if (path.Length <= len) return null;
             return path.Substring(len);
-
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using IKriv.IsItMySource.Interfaces;
 using NUnit.Framework;
 
@@ -29,10 +31,33 @@ namespace IKriv.IsItMySource.Tests
                 };
             }
 
-            public void Setup(SourceFileInfo file, VerificationRecord result)
+            public void Setup(VerificationRecord record)
             {
-                _records[file.Path] = result;
+                _records[record.FileInfo.Path] = record;
             }
+        }
+
+        private VerificationRecord Record(string path, string relativePath, VerificationStatus status, string checksumTypeStr, string checksum)
+        {
+            if (!Enum.TryParse(checksumTypeStr, true, out ChecksumType checksumType)) checksumType = ChecksumType.Unknown;
+            var file = new SourceFileInfo
+            {
+                Path = path,
+                ChecksumType = checksumType,
+                ChecksumTypeStr = checksumTypeStr,
+                Checksum = checksum == null ? new byte[0] : Util.ToByteArray(checksum)
+            };
+
+
+            var record = new VerificationRecord
+            {
+                FileInfo = file,
+                RelativePath = relativePath,
+                Status = status
+            };
+
+            _fileVerifier.Setup(record);
+            return record;
         }
 
         [SetUp]
@@ -49,51 +74,21 @@ namespace IKriv.IsItMySource.Tests
             _fileVerifier = new FakeFileVerifier();
         }
 
-
-        [Test]
-        public void OneFile_Missing_NoRelativePath()
+        private VerifySourcesOperation CreateObject()
         {
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "MD5",
-                ChecksumType = ChecksumType.Md5,
-                Checksum = new byte[]
-                    {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}
-            };
-
-            var operation = CreateObject();
-            operation.Run(new []{sourceFile}, _options);
-
-            Assert.AreEqual(@"MISSING   c:\temp\foobar.cpp MD5 123456789ABCDEF01122334455667788
-1 file(s) failed verification
-", _output.ToString());
+            return new VerifySourcesOperation(_output, _fileVerifier);
         }
 
+        private void Run(params VerificationRecord[] records)
+        {
+            CreateObject().Run(records.Select(r => r.FileInfo), _options);
+        }
 
         [Test]
         public void OneFile_Missing()
         {
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "MD5",
-                ChecksumType = ChecksumType.Md5,
-                Checksum = new byte[]
-                    {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.Missing
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var missing = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.Missing, "MD5", "123456789ABCDEF01122334455667788");
+            Run(missing);
 
             Assert.AreEqual(@"MISSING   foobar.cpp MD5 123456789ABCDEF01122334455667788
 1 file(s) failed verification
@@ -103,26 +98,8 @@ namespace IKriv.IsItMySource.Tests
         [Test]
         public void OneFile_SameChecksum()
         {
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "MD5",
-                ChecksumType = ChecksumType.Md5,
-                Checksum = new byte[]
-                    {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.SameChecksum
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var verified = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.SameChecksum, "MD5", "123456789ABCDEF01122334455667788");
+            Run(verified);
 
             Assert.AreEqual(@"VERIFIED  foobar.cpp MD5 123456789ABCDEF01122334455667788
 ", _output.ToString());
@@ -131,26 +108,8 @@ namespace IKriv.IsItMySource.Tests
         [Test]
         public void OneFile_DifferentChecksum()
         {
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "MD5",
-                ChecksumType = ChecksumType.Md5,
-                Checksum = new byte[]
-                    {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.DifferentChecksum
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var failed = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.DifferentChecksum, "MD5", "123456789ABCDEF01122334455667788");
+            Run(failed);
 
             Assert.AreEqual(@"DIFFERENT foobar.cpp MD5 123456789ABCDEF01122334455667788
 1 file(s) failed verification
@@ -161,27 +120,8 @@ namespace IKriv.IsItMySource.Tests
         public void OneFile_Skipped()
         {
             _options.RootPath = "root-path";
-
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "MD5",
-                ChecksumType = ChecksumType.Md5,
-                Checksum = new byte[]
-                    {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.Skipped
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var skipped = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.Skipped, "MD5", "123456789ABCDEF01122334455667788");
+            Run(skipped);
 
             Assert.AreEqual(@"1 file(s) outside of root-path
 ", _output.ToString());
@@ -190,27 +130,8 @@ namespace IKriv.IsItMySource.Tests
         [Test]
         public void OneFile_NoChecksum()
         {
-            _options.RootPath = "root-path";
-
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "NONE",
-                ChecksumType = ChecksumType.None,
-                Checksum = new byte[0]
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.NoChecksum
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var noChecksum = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.NoChecksum, "NONE", null);
+            Run(noChecksum);
 
             Assert.AreEqual(@"PRESENT   foobar.cpp NONE
 1 file(s) failed verification
@@ -220,27 +141,8 @@ namespace IKriv.IsItMySource.Tests
         [Test]
         public void OneFile_UnknownChecksumType()
         {
-            _options.RootPath = "root-path";
-
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "CRC32",
-                ChecksumType = ChecksumType.Unknown,
-                Checksum = new byte[] { 0x12, 0x34, 0x56, 0x78 }
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.NoChecksum
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var unknownChecksumType = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.UnknownChecksumType, "CRC32", "12345678");
+            Run(unknownChecksumType);
 
             Assert.AreEqual(@"PRESENT   foobar.cpp CRC32 12345678
 1 file(s) failed verification
@@ -250,38 +152,39 @@ namespace IKriv.IsItMySource.Tests
         [Test]
         public void OneFile_ErrorCalculatingChecksum()
         {
-            _options.RootPath = "root-path";
-
-            var sourceFile = new SourceFileInfo
-            {
-                Path = @"c:\temp\foobar.cpp",
-                ChecksumTypeStr = "MD5",
-                ChecksumType = ChecksumType.Md5,
-                Checksum = new byte[]
-                    {0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}
-            };
-
-            var verificationResult = new VerificationRecord
-            {
-                FileInfo = sourceFile,
-                RelativePath = "foobar.cpp",
-                Status = VerificationStatus.CouldNotCalculateChecksum
-            };
-
-            _fileVerifier.Setup(sourceFile, verificationResult);
-
-            var operation = CreateObject();
-            operation.Run(new[] { sourceFile }, _options);
+            var error = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.CouldNotCalculateChecksum, "MD5", "123456789ABCDEF01122334455667788");
+            Run(error);
 
             Assert.AreEqual(@"ERROR     foobar.cpp MD5 123456789ABCDEF01122334455667788
 1 file(s) failed verification
 ", _output.ToString());
         }
 
-        private VerifySourcesOperation CreateObject()
+        [Test]
+        public void ManyFiles()
         {
-            return new VerifySourcesOperation(_output, _fileVerifier);
-        }
+            _options.RootPath = "c:\\temp";
+            var missing = Record(@"c:\temp\missing.cs", "missing.cs", VerificationStatus.Missing, "MD5", "123456789ABCDEF01122334455667788");
+            var verified = Record(@"c:\temp\verified.cs", "verified.cs", VerificationStatus.SameChecksum, "MD5", "9ABCD16A0832495F1E03EBC629A0D432");
+            var failed = Record(@"c:\temp\failed.cs", "failed.cs", VerificationStatus.DifferentChecksum, "MD5", "123456789ABCDEF01122334455667789");
+            var skipped = Record(@"c:\skipped.cs", "c:\\skipped.cs", VerificationStatus.Skipped, "MD5", "123456789ABCDEF0112233445566778A");
+            var noChecksum = Record(@"c:\temp\none.cs", "none.cs", VerificationStatus.NoChecksum, "NONE", null);
+            var unknownChecksumType = Record(@"c:\temp\unknown.cs", "unknown.cs", VerificationStatus.UnknownChecksumType, "CRC32", "12345678");
+            var error = Record(@"c:\temp\error.cs", "error.cs", VerificationStatus.CouldNotCalculateChecksum, "MD5", "123456789ABCDEF0112233445566778B");
 
+            Run(missing, verified, failed, skipped, noChecksum, unknownChecksumType, error);
+
+            const string expectedResult =
+@"ERROR     error.cs MD5 123456789ABCDEF0112233445566778B
+DIFFERENT failed.cs MD5 123456789ABCDEF01122334455667789
+MISSING   missing.cs MD5 123456789ABCDEF01122334455667788
+PRESENT   none.cs NONE
+PRESENT   unknown.cs CRC32 12345678
+VERIFIED  verified.cs MD5 9ABCD16A0832495F1E03EBC629A0D432
+5 file(s) failed verification
+1 file(s) outside of c:\temp
+";
+            Assert.AreEqual(expectedResult, _output.ToString());
+        }
     }
 }
