@@ -80,7 +80,8 @@ namespace IKriv.IsItMySource
             var statusStr = GetShortStatusStr(r.Status);
             var checksumStr = Util.ToHex(r.FileInfo.Checksum);
             _output.Write("{0,-10}", statusStr);
-            _output.WriteLine($"{r.RelativePath} {r.FileInfo.ChecksumTypeStr} {checksumStr}");
+            var filler = (checksumStr == "") ? "" : " ";
+            _output.WriteLine($"{r.RelativePath} {r.FileInfo.ChecksumTypeStr}{filler}{checksumStr}");
             return r;
         }
     }
