@@ -25,7 +25,9 @@ namespace IKriv.IsItMySource
                     ++nLeftOut;
                     continue;
                 }
-                _output.WriteLine($"{relativePath} {doc.ChecksumTypeStr} {Util.ToHex(doc.Checksum)}");
+                string hex = Util.ToHex(doc.Checksum);
+                string filler = (hex == "")? "" : " ";
+                _output.WriteLine($"{relativePath} {doc.ChecksumTypeStr}{filler}{hex}");
             }
 
             if (nLeftOut > 0)

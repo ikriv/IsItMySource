@@ -11,13 +11,15 @@ namespace IKriv.IsItMySource
 
     internal class Options
     {
-        public string ExeOrPdbPath { get; private set; }
-        public string PdbSearchPath { get; private set; }
-        public Operation Operation { get; private set; }
-        public string RootPath { get; private set; }
-        public string LocalRootPath { get; private set; }
-        public string EngineName { get; private set; }
+        public string ExeOrPdbPath { get; set; }
+        public string PdbSearchPath { get; set; }
+        public Operation Operation { get; set; }
+        public string RootPath { get; set; }
+        public string LocalRootPath { get; set; }
+        public string EngineName { get; set; }
 
+        public const string EngineNameManaged = "DiaSymReader";
+        public const string EngineNameNative = "DiaSdk.Managed";
 
         public bool Parse(string[] args)
         {
@@ -28,7 +30,7 @@ namespace IKriv.IsItMySource
             }
 
             var realArgs = new List<string>();
-            EngineName = "DiaSymReader";
+            EngineName = EngineNameManaged;
 
             try
             {
@@ -42,11 +44,14 @@ namespace IKriv.IsItMySource
                     }
                     switch (args[i].ToLower())
                     {
-                        case "--managed": break;
+                        case "--managed":
+                            // set it explicitly: in case someone specified both --unmanaged and --managed the last will win
+                            EngineName = EngineNameManaged; 
+                            break;
 
                         case "--unmanaged":
                         case "--native":
-                            EngineName = "DiaSdk.Managed";
+                            EngineName = EngineNameNative;
                             break;
 
                         case "--root":
