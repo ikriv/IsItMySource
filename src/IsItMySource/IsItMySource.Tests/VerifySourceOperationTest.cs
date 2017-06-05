@@ -91,7 +91,7 @@ namespace IKriv.IsItMySource.Tests
             Run(missing);
 
             Assert.AreEqual(@"MISSING   foobar.cpp MD5 123456789ABCDEF01122334455667788
-1 file(s) failed verification
+1 file(s) missing
 ", _output.ToString());
         }
 
@@ -102,6 +102,7 @@ namespace IKriv.IsItMySource.Tests
             Run(verified);
 
             Assert.AreEqual(@"VERIFIED  foobar.cpp MD5 123456789ABCDEF01122334455667788
+1 file(s) verified
 ", _output.ToString());
         }
 
@@ -123,7 +124,7 @@ namespace IKriv.IsItMySource.Tests
             var skipped = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.Skipped, "MD5", "123456789ABCDEF01122334455667788");
             Run(skipped);
 
-            Assert.AreEqual(@"1 file(s) outside of root-path
+            Assert.AreEqual(@"1 file(s) skipped, because they are outside of root-path
 ", _output.ToString());
         }
 
@@ -134,7 +135,7 @@ namespace IKriv.IsItMySource.Tests
             Run(noChecksum);
 
             Assert.AreEqual(@"PRESENT   foobar.cpp NOCHECKSUM
-1 file(s) failed verification
+1 file(s) present, but have no checksum information
 ", _output.ToString());
         }
 
@@ -145,7 +146,7 @@ namespace IKriv.IsItMySource.Tests
             Run(unknownChecksumType);
 
             Assert.AreEqual(@"PRESENT   foobar.cpp CRC32 12345678
-1 file(s) failed verification
+1 file(s) present, but have unsupported checksum type
 ", _output.ToString());
         }
 
@@ -156,7 +157,7 @@ namespace IKriv.IsItMySource.Tests
             Run(error);
 
             Assert.AreEqual(@"ERROR     foobar.cpp MD5 123456789ABCDEF01122334455667788
-1 file(s) failed verification
+1 file(s) present, but an error occurred while calculating checksum
 ", _output.ToString());
         }
 
@@ -166,13 +167,14 @@ namespace IKriv.IsItMySource.Tests
             _options.RootPath = "c:\\temp";
             var missing = Record(@"c:\temp\missing.cs", "missing.cs", VerificationStatus.Missing, "MD5", "123456789ABCDEF01122334455667788");
             var verified = Record(@"c:\temp\verified.cs", "verified.cs", VerificationStatus.SameChecksum, "MD5", "9ABCD16A0832495F1E03EBC629A0D432");
+            var verified2 = Record(@"c:\temp\verified2.cs", "verified2.cs", VerificationStatus.SameChecksum, "MD5", "9ABCD16A0832495F1E03EBC629A0D433");
             var failed = Record(@"c:\temp\failed.cs", "failed.cs", VerificationStatus.DifferentChecksum, "MD5", "123456789ABCDEF01122334455667789");
             var skipped = Record(@"c:\skipped.cs", "c:\\skipped.cs", VerificationStatus.Skipped, "MD5", "123456789ABCDEF0112233445566778A");
             var noChecksum = Record(@"c:\temp\none.cs", "none.cs", VerificationStatus.NoChecksum, "NOCHECKSUM", null);
             var unknownChecksumType = Record(@"c:\temp\unknown.cs", "unknown.cs", VerificationStatus.UnknownChecksumType, "CRC32", "12345678");
             var error = Record(@"c:\temp\error.cs", "error.cs", VerificationStatus.CouldNotCalculateChecksum, "MD5", "123456789ABCDEF0112233445566778B");
 
-            Run(missing, verified, failed, skipped, noChecksum, unknownChecksumType, error);
+            Run(missing, verified, failed, skipped, noChecksum, unknownChecksumType, error, verified2);
 
             const string expectedResult =
 @"ERROR     error.cs MD5 123456789ABCDEF0112233445566778B
@@ -181,8 +183,14 @@ MISSING   missing.cs MD5 123456789ABCDEF01122334455667788
 PRESENT   none.cs NOCHECKSUM
 PRESENT   unknown.cs CRC32 12345678
 VERIFIED  verified.cs MD5 9ABCD16A0832495F1E03EBC629A0D432
-5 file(s) failed verification
-1 file(s) outside of c:\temp
+VERIFIED  verified2.cs MD5 9ABCD16A0832495F1E03EBC629A0D433
+2 file(s) verified
+1 file(s) failed verification
+1 file(s) missing
+1 file(s) present, but have no checksum information
+1 file(s) present, but have unsupported checksum type
+1 file(s) present, but an error occurred while calculating checksum
+1 file(s) skipped, because they are outside of c:\temp
 ";
             Assert.AreEqual(expectedResult, _output.ToString());
         }

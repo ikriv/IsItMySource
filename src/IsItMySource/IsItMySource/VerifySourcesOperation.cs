@@ -19,6 +19,20 @@ namespace IKriv.IsItMySource
                 {VerificationStatus.CouldNotCalculateChecksum, "ERROR"}
             };
 
+
+        private static readonly Dictionary<VerificationStatus, string> LongStatusStr =
+            new Dictionary<VerificationStatus, string>
+            {
+                {VerificationStatus.Skipped, "skipped"},
+                {VerificationStatus.SameChecksum, "verified"},
+                {VerificationStatus.DifferentChecksum, "failed verification"},
+                {VerificationStatus.Missing, "missing"},
+                {VerificationStatus.NoChecksum, "present, but have no checksum information"},
+                {VerificationStatus.UnknownChecksumType, "present, but have unsupported checksum type"},
+                {VerificationStatus.CouldNotCalculateChecksum, "present, but an error occurred while calculating checksum"}
+            };
+
+
         private readonly TextWriter _output;
         private readonly IFileVerifier _fileVerifier;
 
@@ -38,31 +52,28 @@ namespace IKriv.IsItMySource
 
         public void Run(IEnumerable<SourceFileInfo> sources, Options options)
         {
-            int nLeftOut = 0;
-            int nFailedVerification = 0;
+            var uniqueSources =
+                sources
+                    .GroupBy(s => s.Path)
+                    .Select(g => g.First());
 
-            foreach (var doc in sources.OrderBy(s => s.Path))
+            var summary =
+                uniqueSources
+                    .OrderBy(s => s.Path)
+                    .Select(s => Report(_fileVerifier.Run(s, options)))
+                    .GroupBy(r => r.Status)
+                    .ToDictionary(g => g.Key, g => g.Count());
+
+            foreach (var status in summary.Keys.OrderBy(k => k))
             {
-                var record = Report(_fileVerifier.Run(doc, options));
-                if (record.Status == VerificationStatus.Skipped)
+                if (status == VerificationStatus.Skipped)
                 {
-                    ++nLeftOut;
+                    _output.WriteLine($"{summary[status]} file(s) skipped, because they are outside of {options.RootPath}");
                 }
-                else if (record.Status != VerificationStatus.SameChecksum)
+                else
                 {
-                    ++nFailedVerification;
+                    _output.WriteLine($"{summary[status]} file(s) {LongStatusStr[status]}");
                 }
-
-            }
-
-            if (nFailedVerification > 0)
-            {
-                _output.WriteLine($"{nFailedVerification} file(s) failed verification");
-            }
-
-            if (nLeftOut > 0)
-            {
-                _output.WriteLine($"{nLeftOut} file(s) outside of {options.RootPath}");
             }
         }
 

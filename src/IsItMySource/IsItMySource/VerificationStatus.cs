@@ -2,12 +2,12 @@
 {
     enum VerificationStatus
     {
-        Skipped,
         SameChecksum,
         DifferentChecksum,
         Missing,
         NoChecksum,
         UnknownChecksumType,
-        CouldNotCalculateChecksum
+        CouldNotCalculateChecksum,
+        Skipped
     }
 }
