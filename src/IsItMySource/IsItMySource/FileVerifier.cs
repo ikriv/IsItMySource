@@ -34,7 +34,7 @@ namespace IKriv.IsItMySource
                 : Path.Combine(localRoot, relativePath);
 
             if (!File.Exists(localPath)) return VerificationStatus.Missing;
-            if (fileInfo.ChecksumType == ChecksumType.None) return VerificationStatus.NoChecksum;
+            if (fileInfo.ChecksumType == ChecksumType.NoChecksum) return VerificationStatus.NoChecksum;
             if (fileInfo.ChecksumType == ChecksumType.Unknown) return VerificationStatus.UnknownChecksumType;
 
             var localChecksum = ComputeChecksum(localPath, fileInfo.ChecksumType);

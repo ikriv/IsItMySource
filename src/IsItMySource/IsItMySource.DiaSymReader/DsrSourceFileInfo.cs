@@ -57,7 +57,7 @@ namespace IKriv.IsItMySource.DiaSymReader
             }
             else if (id == Guid.Empty)
             {
-                result.ChecksumType = ChecksumType.None;
+                result.ChecksumType = ChecksumType.NoChecksum;
             }
             else
             {

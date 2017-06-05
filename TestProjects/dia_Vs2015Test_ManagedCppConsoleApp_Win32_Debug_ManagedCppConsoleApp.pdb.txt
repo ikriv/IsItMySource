@@ -1,25 +1,25 @@
 C:\ivan\dev\github\IsItMySource\TestProjects\Vs2015Test\ManagedCppConsoleApp\Debug\app.res MD5 EAB4B8B35E496ACED04578FE1215207B
-c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NONE 
-c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NONE 
-c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NONE 
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NOCHECKSUM
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NOCHECKSUM
+c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\debug\managedcppconsoleapp.pch NOCHECKSUM
 c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\managedcppconsoleapp.cpp MD5 9E6AEBDE2B8820C644684AB6E62F3FFD
 c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\stdafx.h MD5 330A7454A16D28684824830A1FD1FC1A
 c:\ivan\dev\github\isitmysource\testprojects\vs2015test\managedcppconsoleapp\stdafx.h MD5 330A7454A16D28684824830A1FD1FC1A
-c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\mscorlib.dll NONE 
-c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.data.dll NONE 
-c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.dll NONE 
-c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.xml.dll NONE 
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\mscorlib.dll NOCHECKSUM
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.data.dll NOCHECKSUM
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.dll NOCHECKSUM
+c:\program files (x86)\reference assemblies\microsoft\framework\.netframework\v4.0\system.xml.dll NOCHECKSUM
 C:\Users\ivan\AppData\Local\Temp\lnk{AB1FF238-8578-43A4-85DE-E082F471D658}.tmp MD5 A353D12F29901935F17C812BAE451A23
-c:\windows\microsoft.net\framework\v4.0.30319\mscorlib.dll NONE 
+c:\windows\microsoft.net\framework\v4.0.30319\mscorlib.dll NOCHECKSUM
 f:\binaries.x86ret\inc\msclr\gcroot.h MD5 95CF79C0D45979604E2B0C9A730C3BC5
-f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\system.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\system.dll NONE 
-f:\dd\externalapis\netfx\v4.5\ref\system.dll NONE 
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\mscorlib.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\system.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\system.dll NOCHECKSUM
+f:\dd\externalapis\netfx\v4.5\ref\system.dll NOCHECKSUM
 f:\dd\externalapis\unifiedcrt\inc\conio.h MD5 97672F0119438D20BF40182CF9F13092
 f:\dd\externalapis\unifiedcrt\inc\conio.h MD5 97672F0119438D20BF40182CF9F13092
 f:\dd\externalapis\unifiedcrt\inc\corecrt_memcpy_s.h MD5 A5976652B404EDDDBDA326FF9A9488A3

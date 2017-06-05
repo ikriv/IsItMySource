@@ -38,8 +38,8 @@ namespace IKriv.IsItMySource.Tests
             var file = new SourceFileInfo
             {
                 Path = @"c:\temp\foobar.txt",
-                ChecksumTypeStr = "NONE",
-                ChecksumType = ChecksumType.None,
+                ChecksumTypeStr = "NOCHECKSUM",
+                ChecksumType = ChecksumType.NoChecksum,
                 Checksum = new byte[0]
             };
 
@@ -47,7 +47,7 @@ namespace IKriv.IsItMySource.Tests
             operation.Run(new[] { file }, _options);
 
             var str = _output.ToString();
-            Assert.AreEqual("c:\\temp\\foobar.txt NONE\r\n", str);
+            Assert.AreEqual("c:\\temp\\foobar.txt NOCHECKSUM\r\n", str);
         }
 
 
@@ -117,8 +117,8 @@ namespace IKriv.IsItMySource.Tests
                 new SourceFileInfo
                 {
                     Path = @"c:\temp\foobar.pch",
-                    ChecksumTypeStr = "NONE",
-                    ChecksumType = ChecksumType.None,
+                    ChecksumTypeStr = "NOCHECKSUM",
+                    ChecksumType = ChecksumType.NoChecksum,
                     Checksum = new byte[0]
                 },
                 new SourceFileInfo
@@ -146,7 +146,7 @@ namespace IKriv.IsItMySource.Tests
             var str = _output.ToString();
             Assert.AreEqual(
 @"c:\temp\foobar.cpp MD5 123456789ABCDEF01122334455667788
-c:\temp\foobar.pch NONE
+c:\temp\foobar.pch NOCHECKSUM
 f:\dd\external\source.h MD5 AB28449513C207F0D3EEA41F925B386D
 ", str);
         }

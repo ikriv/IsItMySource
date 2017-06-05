@@ -130,10 +130,10 @@ namespace IKriv.IsItMySource.Tests
         [Test]
         public void OneFile_NoChecksum()
         {
-            var noChecksum = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.NoChecksum, "NONE", null);
+            var noChecksum = Record(@"c:\temp\foobar.cpp", "foobar.cpp", VerificationStatus.NoChecksum, "NOCHECKSUM", null);
             Run(noChecksum);
 
-            Assert.AreEqual(@"PRESENT   foobar.cpp NONE
+            Assert.AreEqual(@"PRESENT   foobar.cpp NOCHECKSUM
 1 file(s) failed verification
 ", _output.ToString());
         }
@@ -168,7 +168,7 @@ namespace IKriv.IsItMySource.Tests
             var verified = Record(@"c:\temp\verified.cs", "verified.cs", VerificationStatus.SameChecksum, "MD5", "9ABCD16A0832495F1E03EBC629A0D432");
             var failed = Record(@"c:\temp\failed.cs", "failed.cs", VerificationStatus.DifferentChecksum, "MD5", "123456789ABCDEF01122334455667789");
             var skipped = Record(@"c:\skipped.cs", "c:\\skipped.cs", VerificationStatus.Skipped, "MD5", "123456789ABCDEF0112233445566778A");
-            var noChecksum = Record(@"c:\temp\none.cs", "none.cs", VerificationStatus.NoChecksum, "NONE", null);
+            var noChecksum = Record(@"c:\temp\none.cs", "none.cs", VerificationStatus.NoChecksum, "NOCHECKSUM", null);
             var unknownChecksumType = Record(@"c:\temp\unknown.cs", "unknown.cs", VerificationStatus.UnknownChecksumType, "CRC32", "12345678");
             var error = Record(@"c:\temp\error.cs", "error.cs", VerificationStatus.CouldNotCalculateChecksum, "MD5", "123456789ABCDEF0112233445566778B");
 
@@ -178,7 +178,7 @@ namespace IKriv.IsItMySource.Tests
 @"ERROR     error.cs MD5 123456789ABCDEF0112233445566778B
 DIFFERENT failed.cs MD5 123456789ABCDEF01122334455667789
 MISSING   missing.cs MD5 123456789ABCDEF01122334455667788
-PRESENT   none.cs NONE
+PRESENT   none.cs NOCHECKSUM
 PRESENT   unknown.cs CRC32 12345678
 VERIFIED  verified.cs MD5 9ABCD16A0832495F1E03EBC629A0D432
 5 file(s) failed verification

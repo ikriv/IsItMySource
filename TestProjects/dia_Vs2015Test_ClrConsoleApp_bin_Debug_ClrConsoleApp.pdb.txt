@@ -1,1 +1,1 @@
-C:\ivan\dev\github\IsItMySource\TestProjects\Vs2015Test\ClrConsoleApp\Program.cs NONE 
+C:\ivan\dev\github\IsItMySource\TestProjects\Vs2015Test\ClrConsoleApp\Program.cs NOCHECKSUM

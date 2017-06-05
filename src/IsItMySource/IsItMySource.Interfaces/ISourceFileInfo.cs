@@ -2,13 +2,12 @@
 {
     public enum ChecksumType
     {
-        None,
+        NoChecksum,
         Md5,
         Sha1,
         Unknown
     }
-
-
+    
     public class SourceFileInfo
     {
         public string Path { get; set; }
