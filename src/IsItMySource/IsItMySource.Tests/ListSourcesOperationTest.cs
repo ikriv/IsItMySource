@@ -1,16 +1,16 @@
 ﻿using System.IO;
 using IKriv.IsItMySource.Interfaces;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace IKriv.IsItMySource.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ListSourcesOperationTest
     {
         private StringWriter _output;
         private Options _options;
 
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
             _output = new StringWriter();
@@ -22,7 +22,7 @@ namespace IKriv.IsItMySource.Tests
             };
         }
 
-        [TestMethod]
+        [Test]
         public void EmptyListYieldsEmptyOutput()
         {
             var operation = CreateObject();
@@ -32,7 +32,7 @@ namespace IKriv.IsItMySource.Tests
             Assert.AreEqual("", str);
         }
 
-        [TestMethod]
+        [Test]
         public void OneFile_NoChecksum()
         {
             var file = new SourceFileInfo
@@ -51,7 +51,7 @@ namespace IKriv.IsItMySource.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void OneFile_Md5()
         {
             var file = new SourceFileInfo
@@ -71,7 +71,7 @@ namespace IKriv.IsItMySource.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void OneFile_Sha1()
         {
             var file = new SourceFileInfo
@@ -90,7 +90,7 @@ namespace IKriv.IsItMySource.Tests
             Assert.AreEqual("c:\\temp\\foobar.txt SHA1 123456789ABCDEF0112233445566778899AABBCC\r\n", str);
         }
 
-        [TestMethod]
+        [Test]
         public void OneFile_UnknownChecksum()
         {
             var file = new SourceFileInfo
@@ -109,7 +109,7 @@ namespace IKriv.IsItMySource.Tests
             Assert.AreEqual("c:\\temp\\foobar.txt CRC32 12345678\r\n", str);
         }
 
-        [TestMethod]
+        [Test]
         public void MultipleFiles_SortedAlphabetically()
         {
             var files = new[]

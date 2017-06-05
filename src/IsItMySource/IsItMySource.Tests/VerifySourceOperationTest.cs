@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using IKriv.IsItMySource.Interfaces;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+using NUnit.Framework;
 
 
 namespace IKriv.IsItMySource.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class VerifySourceOperationTest
     {
         private StringWriter _output;
@@ -36,7 +35,7 @@ namespace IKriv.IsItMySource.Tests
             }
         }
 
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
             _output = new StringWriter();
@@ -51,7 +50,7 @@ namespace IKriv.IsItMySource.Tests
         }
 
 
-        [TestMethod]
+        [Test]
         public void OneFile_Missing()
         {
             var sourceFile = new SourceFileInfo
