@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
 
 namespace IKriv.IsItMySource
 {
@@ -17,6 +19,7 @@ namespace IKriv.IsItMySource
         public string RootPath { get; set; }
         public string LocalRootPath { get; set; }
         public string EngineName { get; set; }
+        public string IgnoreFiles { get; set; }
 
         public const string EngineNameManaged = "DiaSymReader";
         public const string EngineNameNative = "DiaSdk.Managed";
@@ -28,6 +31,8 @@ namespace IKriv.IsItMySource
                 Usage();
                 return false;
             }
+
+            ParseAppConfig();
 
             var realArgs = new List<string>();
             EngineName = EngineNameManaged;
@@ -63,6 +68,16 @@ namespace IKriv.IsItMySource
                             PdbSearchPath = GetOptValue(args, i);
                             ++i;
                             break;
+
+                        case "--ignore":
+                            IgnoreFiles += ";" + GetOptValue(args, i);
+                            ++i;
+                            break;
+
+                        case "--allfiles":
+                            IgnoreFiles = "";
+                            break;
+
                         default:
                             throw new InvalidOperationException("Invalid option: " + args[i]);
                     }
@@ -95,6 +110,12 @@ namespace IKriv.IsItMySource
             return true;
         }
 
+        private void ParseAppConfig()
+        {
+            var settings = ConfigurationManager.AppSettings;
+            IgnoreFiles = settings["IgnoreFiles"] ?? ""; 
+        }
+
         private static string GetOptValue(string[] args, int i)
         {
             if (i+1>=args.Length) throw new InvalidOperationException("Missing value for option " + args[i]);
@@ -114,6 +135,16 @@ namespace IKriv.IsItMySource
     Managed debug info reader starts with an EXE file and searches for PDB.
    
 OPTIONS
+    --allfiles  Include system files that are ignored by default.
+
+    --ignore pattern1[;pattern2...]
+                Ignore files that match specified wildcard patterns. Allowed
+                wildcard characters are 
+                **\  empty string or any character sequence followed by backslash
+                **   any character sequence
+                *    any character sequence not containing backslash
+                ?    single character except backslash
+
     --managed   Read managed debug info via DIASymReader. This is the default.
                 Supports only EXE files. PDB file must be next to the EXE file
                 or in the path specified by --search.
@@ -121,9 +152,11 @@ OPTIONS
     --native    Read native debug info via DIA SDK. This won't return source 
                 file checksums for managed executables. Supports EXE and PDB.
 
-    --unmanaged Same as --native
+     --pdbdir dir1[;dir2...]
+                Use this semicolon-separated path to look for PDB file 
+                if EXE is specified
 
-    --root      Root path for source files inside the PDB/EXE file. File 
+    --root dir  Root path for source files inside the PDB/EXE file. File 
                 {root}/relative.path referenced by EXE/PDB will be matched to 
                 {folder}/relative.path on local disk.
                 Source files outside of the root will be ignored. 
@@ -132,8 +165,8 @@ OPTIONS
                 is run, then the program will expect local file 
                 d:\projects\proj\foo\bar.cs to match 
                 c:\mysources\proj\foo\bar.cs referenced proj.exe.
-                
-    --pdbdir    Use this path to look for PDB file if EXE is specified"
+
+    --unmanaged Same as --native"
 ); 
             
         }

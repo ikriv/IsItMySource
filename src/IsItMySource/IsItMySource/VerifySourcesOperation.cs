@@ -52,13 +52,8 @@ namespace IKriv.IsItMySource
 
         public void Run(IEnumerable<SourceFileInfo> sources, Options options)
         {
-            var uniqueSources =
-                sources
-                    .GroupBy(s => s.Path)
-                    .Select(g => g.First());
-
             var summary =
-                uniqueSources
+                sources
                     .OrderBy(s => s.Path)
                     .Select(s => Report(_fileVerifier.Run(s, options)))
                     .GroupBy(r => r.Status)

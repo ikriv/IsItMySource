@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using IKriv.IsItMySource.DiaSdk.Managed;
 using IKriv.IsItMySource.DiaSymReader;
 using IKriv.IsItMySource.Interfaces;
@@ -34,12 +36,23 @@ namespace IKriv.IsItMySource
             }
 
             var reader = GetReader(options.EngineName);
-            using (var debugInfo = reader.GetDebugInfo(options.ExeOrPdbPath, options.PdbSearchPath))
+            using (var debugInfo = GetDebugInfo(reader,options))
             {
-                var sources = debugInfo.GetSourceFiles();
+                var filter = new SourceFilesFilter(options);
+                var sources = filter.Filter(debugInfo.GetSourceFiles());
                 var operation = CreateOperation(options.Operation, Console.Out);
                 operation.Run(sources, options);
             }
+        }
+
+        private static IDebugInfo GetDebugInfo(IDebugInfoReader reader, Options options)
+        {
+            return reader.GetDebugInfo(options.ExeOrPdbPath, options.PdbSearchPath);
+        }
+
+        private static IEnumerable<SourceFileInfo> Unique(IEnumerable<SourceFileInfo> files)
+        {
+            return files.GroupBy(f => f.Path).Select(g => g.First());
         }
 
         private static IDebugInfoReader GetReader(string engine)
