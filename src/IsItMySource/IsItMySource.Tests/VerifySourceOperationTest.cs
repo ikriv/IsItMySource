@@ -194,5 +194,35 @@ VERIFIED  verified2.cs MD5 9ABCD16A0832495F1E03EBC629A0D433
 ";
             Assert.AreEqual(expectedResult, _output.ToString());
         }
+
+        [Test]
+        public void ManyFilesNoSummary()
+        {
+            _options.RootPath = "c:\\temp";
+            _options.ShowSummary = false;
+
+            var missing = Record(@"c:\temp\missing.cs", "missing.cs", VerificationStatus.Missing, "MD5", "123456789ABCDEF01122334455667788");
+            var verified = Record(@"c:\temp\verified.cs", "verified.cs", VerificationStatus.SameChecksum, "MD5", "9ABCD16A0832495F1E03EBC629A0D432");
+            var verified2 = Record(@"c:\temp\verified2.cs", "verified2.cs", VerificationStatus.SameChecksum, "MD5", "9ABCD16A0832495F1E03EBC629A0D433");
+            var failed = Record(@"c:\temp\failed.cs", "failed.cs", VerificationStatus.DifferentChecksum, "MD5", "123456789ABCDEF01122334455667789");
+            var skipped = Record(@"c:\skipped.cs", "c:\\skipped.cs", VerificationStatus.Skipped, "MD5", "123456789ABCDEF0112233445566778A");
+            var noChecksum = Record(@"c:\temp\none.cs", "none.cs", VerificationStatus.NoChecksum, "NOCHECKSUM", null);
+            var unknownChecksumType = Record(@"c:\temp\unknown.cs", "unknown.cs", VerificationStatus.UnknownChecksumType, "CRC32", "12345678");
+            var error = Record(@"c:\temp\error.cs", "error.cs", VerificationStatus.CouldNotCalculateChecksum, "MD5", "123456789ABCDEF0112233445566778B");
+
+            Run(missing, verified, failed, skipped, noChecksum, unknownChecksumType, error, verified2);
+
+            const string expectedResult =
+                @"ERROR     error.cs MD5 123456789ABCDEF0112233445566778B
+DIFFERENT failed.cs MD5 123456789ABCDEF01122334455667789
+MISSING   missing.cs MD5 123456789ABCDEF01122334455667788
+PRESENT   none.cs NOCHECKSUM
+PRESENT   unknown.cs CRC32 12345678
+VERIFIED  verified.cs MD5 9ABCD16A0832495F1E03EBC629A0D432
+VERIFIED  verified2.cs MD5 9ABCD16A0832495F1E03EBC629A0D433
+";
+            Assert.AreEqual(expectedResult, _output.ToString());
+        }
+
     }
 }

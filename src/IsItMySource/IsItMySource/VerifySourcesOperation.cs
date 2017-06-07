@@ -59,15 +59,19 @@ namespace IKriv.IsItMySource
                     .GroupBy(r => r.Status)
                     .ToDictionary(g => g.Key, g => g.Count());
 
-            foreach (var status in summary.Keys.OrderBy(k => k))
+            if (options.ShowSummary)
             {
-                if (status == VerificationStatus.Skipped)
+                foreach (var status in summary.Keys.OrderBy(k => k))
                 {
-                    _output.WriteLine($"{summary[status]} file(s) skipped, because they are outside of {options.RootPath}");
-                }
-                else
-                {
-                    _output.WriteLine($"{summary[status]} file(s) {LongStatusStr[status]}");
+                    if (status == VerificationStatus.Skipped)
+                    {
+                        _output.WriteLine(
+                            $"{summary[status]} file(s) skipped, because they are outside of {options.RootPath}");
+                    }
+                    else
+                    {
+                        _output.WriteLine($"{summary[status]} file(s) {LongStatusStr[status]}");
+                    }
                 }
             }
         }

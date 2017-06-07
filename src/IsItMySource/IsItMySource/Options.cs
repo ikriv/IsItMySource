@@ -20,6 +20,7 @@ namespace IKriv.IsItMySource
         public string LocalRootPath { get; set; }
         public string EngineName { get; set; }
         public string IgnoreFiles { get; set; }
+        public bool ShowSummary { get; set; } = true;
 
         public const string EngineNameManaged = "DiaSymReader";
         public const string EngineNameNative = "DiaSdk.Managed";
@@ -76,6 +77,10 @@ namespace IKriv.IsItMySource
 
                         case "--allfiles":
                             IgnoreFiles = "";
+                            break;
+
+                        case "--nosummary":
+                            ShowSummary = false;
                             break;
 
                         default:
@@ -152,7 +157,9 @@ OPTIONS
     --native    Read native debug info via DIA SDK. This won't return source 
                 file checksums for managed executables. Supports EXE and PDB.
 
-     --pdbdir dir1[;dir2...]
+    --nosummary Do not show summary statistics when verifying sources.
+
+    --pdbdir dir1[;dir2...]
                 Use this semicolon-separated path to look for PDB file 
                 if EXE is specified
 
