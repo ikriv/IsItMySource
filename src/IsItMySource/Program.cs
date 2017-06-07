@@ -63,17 +63,21 @@ namespace IKriv.IsItMySource
             var debugEngineAttr = (DebugInfoEngineAttribute)engineAssembly.GetCustomAttributes(typeof(DebugInfoEngineAttribute), true).FirstOrDefault();
             if (debugEngineAttr == null)
             {
-                throw new InvalidOperationException(engineAssemblyName + " does not have [DebugInfoEngine] attribute");
+                throw new InvalidOperationException(engineAssemblyName + " assembly does not have [assembly:DebugInfoEngine] attribute");
             }
 
             var engineType = debugEngineAttr.Type;
-            if (engineType == null) throw new InvalidOperationException(engineAssemblyName + "has [DebugInfoEngine] attribute with null type");
+            if (engineType == null)
+            {
+                throw new InvalidOperationException(engineAssemblyName + " assembly has [assembly:DebugInfoEngine] attribute with null type");
+            }
 
-            var engineTypeName = engineType.FullName + "," + engineAssemblyName;
+            var engineTypeName = engineType.FullName + "," + engineType.Assembly.FullName;
 
             if (!typeof(IDebugInfoReader).IsAssignableFrom(engineType))
             {
-                throw new InvalidOperationException($"Type {engineTypeName} does not implement IDebugInfoReader");
+                throw new InvalidOperationException($"Cannot load debug engine from assembly {engineAssemblyName}. " +
+                    $"Type {engineTypeName} does not implement interface IDebugInfoReader");
             }
 
             IDebugInfoReader result;

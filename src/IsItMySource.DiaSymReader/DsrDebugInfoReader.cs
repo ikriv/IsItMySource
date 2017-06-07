@@ -1,4 +1,5 @@
-﻿using IKriv.IsItMySource.Interfaces;
+﻿using System;
+using IKriv.IsItMySource.Interfaces;
 
 namespace IKriv.IsItMySource.DiaSymReader
 {
