@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using IKriv.IsItMySource.Interfaces;
 
-namespace IKriv.IsItMySource.DiaSdk.Managed
+namespace IKriv.IsItMySource.DiaSdk
 {
     internal static class DiaSdkSourceFileInfo
     {

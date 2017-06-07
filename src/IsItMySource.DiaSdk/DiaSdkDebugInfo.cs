@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using IKriv.IsItMySource.Interfaces;
 
-namespace IKriv.IsItMySource.DiaSdk.Managed
+namespace IKriv.IsItMySource.DiaSdk
 {
     internal class DiaSdkDebugInfo : IDebugInfo
     {

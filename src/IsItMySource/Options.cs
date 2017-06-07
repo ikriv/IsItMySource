@@ -22,8 +22,8 @@ namespace IKriv.IsItMySource
         public string IgnoreFiles { get; set; }
         public bool ShowSummary { get; set; } = true;
 
-        public const string EngineNameManaged = "DiaSymReader";
-        public const string EngineNameNative = "DiaSdk.Managed";
+        public const string EngineNameManaged = "diasymreader";
+        public const string EngineNameNative = "diasdk";
 
         public bool Parse(string[] args)
         {

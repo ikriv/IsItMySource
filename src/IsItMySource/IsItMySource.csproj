@@ -61,9 +61,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IsItMySource.DiaSdk.Managed\IsItMySource.DiaSdk.Managed.csproj">
+    <ProjectReference Include="..\IsItMySource.DiaSdk\IsItMySource.DiaSdk.csproj">
       <Project>{39672094-cc09-464d-910f-038572baf2f7}</Project>
-      <Name>IsItMySource.DiaSdk.Managed</Name>
+      <Name>IsItMySource.DiaSdk</Name>
     </ProjectReference>
     <ProjectReference Include="..\IsItMySource.DiaSymReader\IsItMySource.DiaSymReader.csproj">
       <Project>{d1dc7a29-4b92-4b44-be1b-092530994b81}</Project>

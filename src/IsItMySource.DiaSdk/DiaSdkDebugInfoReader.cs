@@ -1,6 +1,6 @@
 ﻿using IKriv.IsItMySource.Interfaces;
 
-namespace IKriv.IsItMySource.DiaSdk.Managed
+namespace IKriv.IsItMySource.DiaSdk
 {
     public class DiaSdkDebugInfoReader : IDebugInfoReader
     {

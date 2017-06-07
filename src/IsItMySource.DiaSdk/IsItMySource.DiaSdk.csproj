@@ -7,8 +7,8 @@
     <ProjectGuid>{39672094-CC09-464D-910F-038572BAF2F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IKriv.IsItMySource.DiaSdk.Managed</RootNamespace>
-    <AssemblyName>IsItMySource.DiaSdk.Managed</AssemblyName>
+    <RootNamespace>IKriv.IsItMySource.DiaSdk</RootNamespace>
+    <AssemblyName>IsItMySource.DiaSdk</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

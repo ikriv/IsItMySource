@@ -6,7 +6,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.InteropServices.CustomMarshalers;
 
 // ReSharper disable InconsistentNaming
-namespace IKriv.IsItMySource.DiaSdk.Managed
+namespace IKriv.IsItMySource.DiaSdk
 {
     [Guid("A2EF5353-F5A8-4EB3-90D2-CB526ACB3CDD")]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]

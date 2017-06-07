@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using IKriv.IsItMySource.DiaSdk.Managed;
+using IKriv.IsItMySource.DiaSdk;
 using IKriv.IsItMySource.DiaSymReader;
 using IKriv.IsItMySource.Interfaces;
 
@@ -50,23 +48,17 @@ namespace IKriv.IsItMySource
             return reader.GetDebugInfo(options.ExeOrPdbPath, options.PdbSearchPath);
         }
 
-        private static IEnumerable<SourceFileInfo> Unique(IEnumerable<SourceFileInfo> files)
-        {
-            return files.GroupBy(f => f.Path).Select(g => g.First());
-        }
-
         private static IDebugInfoReader GetReader(string engine)
         {
             // TODO: add dynamic reader plugin loading mechanism
-            if (engine == null) engine = "DiaSymReader";
+            if (engine == null) engine = Options.EngineNameManaged;
             switch (engine.ToLower())
             {
-                case "diasymreader":
+                case Options.EngineNameManaged:
                     return new DsrDebugInfoReader();
 
-                case "diasdk.managed":
+                case Options.EngineNameNative:
                     return new DiaSdkDebugInfoReader();
-
 
                 default:
                     throw new NotSupportedException("Unknown debug info retrieval engine: " + engine);

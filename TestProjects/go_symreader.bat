@@ -13,7 +13,7 @@ DO call go_symreader %%f
 goto :End
 
 :OneFile
-set EXE=..\src\IsItMySource\IsItMySource\bin\Debug\IsItMySource.exe
+set EXE=..\src\IsItMySource\bin\Debug\IsItMySource.exe
 set INFILE=%1
 set OUTFILE=sym_%INFILE:\=_%.txt
 echo %INFILE%

@@ -15,7 +15,7 @@ DO call go_diasdk %%f
 goto :End
 
 :OneFile
-set EXE=..\src\IsItMySource\IsItMySource\bin\Debug\IsItMySource.exe
+set EXE=..\src\IsItMySource\bin\Debug\IsItMySource.exe
 set INFILE=%1
 set OUTFILE=dia_%INFILE:\=_%.txt
 echo %INFILE%
