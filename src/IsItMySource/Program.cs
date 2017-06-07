@@ -48,11 +48,9 @@ namespace IKriv.IsItMySource
             return reader.GetDebugInfo(options.ExeOrPdbPath, options.PdbSearchPath);
         }
 
-        private static IDebugInfoReader GetReader(string engine)
+        private static IDebugInfoReader GetReader(string engineAssemblyName)
         {
-            if (engine == null) engine = Options.EngineNameManaged;
-            var mainAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-            var engineAssemblyName = mainAssemblyName + "." + engine;
+            if (engineAssemblyName == null) engineAssemblyName = Options.EngineNameManaged;
             var engineAssembly = Assembly.Load(engineAssemblyName);
 
             if (engineAssembly == null)

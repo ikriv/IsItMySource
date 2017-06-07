@@ -22,8 +22,8 @@ namespace IKriv.IsItMySource
         public string IgnoreFiles { get; set; }
         public bool ShowSummary { get; set; } = true;
 
-        public const string EngineNameManaged = "DiaSymReader";
-        public const string EngineNameNative = "DiaSdk";
+        public const string EngineNameManaged = "IsItMySource.DiaSymReader";
+        public const string EngineNameNative = "IsItMySource.DiaSdk";
 
         public bool Parse(string[] args)
         {
@@ -58,6 +58,11 @@ namespace IKriv.IsItMySource
                         case "--unmanaged":
                         case "--native":
                             EngineName = EngineNameNative;
+                            break;
+
+                        case "--use":
+                            EngineName = GetOptValue(args, i);
+                            ++i;
                             break;
 
                         case "--root":
@@ -172,6 +177,10 @@ OPTIONS
                 is run, then the program will expect local file 
                 d:\projects\proj\foo\bar.cs to match 
                 c:\mysources\proj\foo\bar.cs referenced proj.exe.
+
+    --use name  Load debug info engine from assembly {name}.
+                The assembly must have [assembly:DebugInfoEngine(typeof(T))] 
+                attribute where T implements IDebugInfoReader
 
     --unmanaged Same as --native"
 ); 
