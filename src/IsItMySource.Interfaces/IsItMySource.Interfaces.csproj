@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
     <Compile Include="IDebugInfo.cs" />
     <Compile Include="IDebugInfoReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

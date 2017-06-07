@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
     <Compile Include="ComInterfaces.cs" />
     <Compile Include="DsrDebugInfo.cs" />
     <Compile Include="DsrDebugInfoReader.cs" />
