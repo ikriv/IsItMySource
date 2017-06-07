@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
@@ -30,6 +31,52 @@ namespace IKriv.IsItMySource
             if (path[len] == '\\') len++;
             if (path.Length <= len) return null;
             return path.Substring(len);
+        }
+
+        public static string GetCommonPrefix(IEnumerable<string> list)
+        {
+            int len = -1;
+            string firstItem = null;
+
+            foreach (var item in list)
+            {
+                if (item == null) continue;
+                if (firstItem == null)
+                {
+                    firstItem = item;
+                    len = item.Length;
+                }
+                else
+                {
+                    len = GetCommonPrefixLength(firstItem, item, Math.Min(len, item.Length));
+                }
+
+                if (len == 0) return String.Empty;
+            }
+
+            if (firstItem == null) return String.Empty; // no items in list
+            if (len <= 0) return String.Empty; // no common prefix
+            return firstItem.Substring(0, len);
+        }
+
+        public static string GetCommonRootDir(IEnumerable<string> paths)
+        {
+            var prefix = GetCommonPrefix(paths);
+            if (prefix == "") return "";
+            var lastSlash = prefix.LastIndexOf('\\');
+            if (lastSlash <= 0) return "";
+            return prefix.Substring(0, lastSlash);
+
+        }
+
+        private static int GetCommonPrefixLength(string s1, string s2, int maxLen)
+        {
+            for (int i = 0; i < maxLen; ++i)
+            {
+                if (s1[i] != s2[i]) return i;
+            }
+
+            return maxLen;
         }
     }
 }

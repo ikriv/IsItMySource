@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using IKriv.IsItMySource.Interfaces;
@@ -52,9 +53,15 @@ namespace IKriv.IsItMySource
 
         public void Run(IEnumerable<SourceFileInfo> sources, Options options)
         {
+            var orderedSources = sources.OrderBy(s => s.Path).ToList();
+            if (options.RootPath == null)
+            {
+                options.RootPath = GuessRootPath(orderedSources);
+                _output.WriteLine($"Running with --root \"{options.RootPath}\"");
+            }
+
             var summary =
-                sources
-                    .OrderBy(s => s.Path)
+                orderedSources
                     .Select(s => Report(_fileVerifier.Run(s, options)))
                     .GroupBy(r => r.Status)
                     .ToDictionary(g => g.Key, g => g.Count());
@@ -74,6 +81,14 @@ namespace IKriv.IsItMySource
                     }
                 }
             }
+        }
+
+        private static string GuessRootPath(IEnumerable<SourceFileInfo> sources)
+        {
+            // randomized file order for better performance; it may take longer to find common prefix if files are sorted by path
+            var random = new Random();
+            var randomizedSources = sources.OrderBy(s => random.Next()); 
+            return Util.GetCommonRootDir(randomizedSources.Select(s => s.Path));
         }
 
         private static string GetShortStatusStr(VerificationStatus status)
