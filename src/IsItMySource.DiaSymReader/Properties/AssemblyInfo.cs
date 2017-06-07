@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using IKriv.IsItMySource.DiaSymReader;
+using IKriv.IsItMySource.Interfaces;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -20,4 +21,6 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("d1dc7a29-4b92-4b44-be1b-092530994b81")]
+
+[assembly:DebugInfoEngine(typeof(DsrDebugInfoReader))]
 

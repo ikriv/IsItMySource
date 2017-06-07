@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -64,14 +64,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IsItMySource.DiaSdk\IsItMySource.DiaSdk.csproj">
-      <Project>{39672094-cc09-464d-910f-038572baf2f7}</Project>
-      <Name>IsItMySource.DiaSdk</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IsItMySource.DiaSymReader\IsItMySource.DiaSymReader.csproj">
-      <Project>{d1dc7a29-4b92-4b44-be1b-092530994b81}</Project>
-      <Name>IsItMySource.DiaSymReader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IsItMySource.Interfaces\IsItMySource.Interfaces.csproj">
       <Project>{3c31dd10-3f72-445d-b06d-8aecc62d9153}</Project>
       <Name>IsItMySource.Interfaces</Name>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using IKriv.IsItMySource.DiaSdk;
-using IKriv.IsItMySource.DiaSymReader;
+using System.Linq;
+using System.Reflection;
 using IKriv.IsItMySource.Interfaces;
 
 namespace IKriv.IsItMySource
@@ -50,19 +50,47 @@ namespace IKriv.IsItMySource
 
         private static IDebugInfoReader GetReader(string engine)
         {
-            // TODO: add dynamic reader plugin loading mechanism
             if (engine == null) engine = Options.EngineNameManaged;
-            switch (engine.ToLower())
+            var mainAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            var engineAssemblyName = mainAssemblyName + "." + engine;
+            var engineAssembly = Assembly.Load(engineAssemblyName);
+
+            if (engineAssembly == null)
             {
-                case Options.EngineNameManaged:
-                    return new DsrDebugInfoReader();
-
-                case Options.EngineNameNative:
-                    return new DiaSdkDebugInfoReader();
-
-                default:
-                    throw new NotSupportedException("Unknown debug info retrieval engine: " + engine);
+                throw new NotSupportedException("Could not load " + engineAssemblyName);
             }
+
+            var debugEngineAttr = (DebugInfoEngineAttribute)engineAssembly.GetCustomAttributes(typeof(DebugInfoEngineAttribute), true).FirstOrDefault();
+            if (debugEngineAttr == null)
+            {
+                throw new InvalidOperationException(engineAssemblyName + " does not have [DebugInfoEngine] attribute");
+            }
+
+            var engineType = debugEngineAttr.Type;
+            if (engineType == null) throw new InvalidOperationException(engineAssemblyName + "has [DebugInfoEngine] attribute with null type");
+
+            var engineTypeName = engineType.FullName + "," + engineAssemblyName;
+
+            if (!typeof(IDebugInfoReader).IsAssignableFrom(engineType))
+            {
+                throw new InvalidOperationException($"Type {engineTypeName} does not implement IDebugInfoReader");
+            }
+
+            IDebugInfoReader result;
+
+            try
+            {
+                result = Activator.CreateInstance(engineType) as IDebugInfoReader;
+            }
+            catch (Exception ex)
+            {
+                throw new TargetInvocationException($"Could not create instance of type {engineTypeName}", ex);
+            }
+
+
+            if (result == null) throw new InvalidOperationException($"Activator.CreateInstance() returned null for {engineTypeName}");
+
+            return result;
         }
 
         private static IOperation CreateOperation(Operation op, TextWriter output)
