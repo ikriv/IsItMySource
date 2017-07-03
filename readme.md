@@ -5,7 +5,7 @@ IsItMySource is a program that can
    * Print list of source files stored in the debug information of EXE or PDB.
    * Check whether a set of source files matches a given EXE or PDB.
 
-### Why you would need it
+### Why you need it
 I wrote this tool so I could verify whether given executable was compiled from given source code. Let's say we need to modify a library or a tool X that is distributed in binary form, but was allegedly compiled from source revision Y. If it was really compiled from Y, then we can safely make necessary modifications and recompile, but if it was not compiled from Y, we may lose functionality, or introduce bugs. 
 
 In the ideal world each executable should contain an unambiguous reference to the location and revision of the source code, but in practice it is not always the case.
@@ -16,11 +16,13 @@ Unfortunately, format of debug information is not well documented and tends to c
 
 There are at least two different types of debug information: managed (.NET) and unmanaged (native). .NET executables contain both, but only the managed portion has the checksums. Native executables contain only native debug information.
 
-_IsItMySource_ does not parse executable files by haand. Managed debug information is accessed via [Diagnostics Symbols Store Interface](https://docs.microsoft.com/en-us/dotnet/framework/unmanaged-api/diagnostics/) that is shipped with .NET Framework. Unmanaged debug information is read via [Debug Interface Access SDK](https://msdn.microsoft.com/en-us/library/x93ctkx8.aspx?f=255&MSPPError=-2147217396) that ships with Visual Studio. You must have Visual Studio and DIA SDK on the machine to read native debug information.
+_IsItMySource_ does not parse executable files by hand. Managed debug information is accessed via [Diagnostics Symbols Store Interface](https://docs.microsoft.com/en-us/dotnet/framework/unmanaged-api/diagnostics/) that is shipped with .NET Framework. Unmanaged debug information is read via [Debug Interface Access SDK](https://msdn.microsoft.com/en-us/library/x93ctkx8.aspx?f=255&MSPPError=-2147217396) that ships with Visual Studio. You must have Visual Studio and DIA SDK on the machine to read native debug information.
 
 _IsItMySource_ works with  managed debug information by default. Use `--native` switch to read native debug information.
 
 ### Usage 
+
+_IsItMysource_ requires .NET Framework 4 or later. 
 
     IsItMySource [options] exe_or_pdb_file [folder]
 
@@ -44,7 +46,7 @@ Include system files that are ignored by default.
 Read managed debug info via DIASymReader. This is the default. Supports only EXE files. PDB file must be next to the EXE file or in the path specified by `--search`.
 
 `--native`  
-Read native debug info via DIA SDK. This won't return source file checksums for managed executables. Supports EXE and PDB.
+Read native debug info using DIA SDK. DIA SDK must be installed on the machine. Native debug information does not include source file checksums for managed executables. DIA SDK supports reading fromEXE and PDB files. DIA SDK ship with Visual Studio 2015 or 2017. 
 
 `--nosummary`  
 Do not show summary statistics when verifying sources.
@@ -62,6 +64,13 @@ Load debug info engine from assembly **{name}**. The assembly must have `[assemb
 
 `--unmanaged`  
 Same as --native
+### Compilation
+You will need Visual Studio 2015 or 2017 to compile the project. Alternatively, you can download the binaries from the GitHub release.
+
+### See Also
+* [ikriv.com](http://www.ikriv.com/dev/dotnet/IsItMySource/) contains more detailed version of this readme, including some details of code architecture.
+
+* "[Does that source match the binary?](http://www.ikriv.com/blog/?p=2394)" blog entry explains the motivation and the background story of this tool.
 
 ### Comments and Suggestions
 Feel free to send your comments via the [Feedback page](http://www.ikriv.com/feedback.php?subj=About%20IsItMySource).
